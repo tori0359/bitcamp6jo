@@ -4,14 +4,14 @@ import java.sql.Date;
 
 public class NoticeDto {
 	
-	//공지사항
+	//공지사항(test)
 	private int 	num;			//공지사항 번호
 	private String	subject;		//공지사항 제목
 	private String	content;		//공지사항 내용
 	private Date	regdate;		//공지사항 등록일자
 	private int		topstate;		//공지사항 상단노출상태값(0:공지사항x, 1:공지사항o)
 	
-	//관리자 객체
+	//관리자 객체 객체 객체
 	private AdminDto admin;		//관리자번호(admin.num)
 	
 	public NoticeDto() {
