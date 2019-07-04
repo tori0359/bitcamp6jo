@@ -28,6 +28,8 @@ public class UserDao {
 		return 0;
 	}
 	
+	//안녕하세요.
+	
 	
 
 	
