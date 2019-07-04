@@ -28,6 +28,12 @@ public class UserDao {
 		return 0;
 	}
 	
+	//회원탈퇴
+	public int withDrawal(UserDto user){
+		
+		return 0;
+	}
+	
 	
 
 	
