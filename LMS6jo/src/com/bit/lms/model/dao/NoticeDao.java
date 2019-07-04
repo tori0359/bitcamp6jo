@@ -1,6 +1,7 @@
 package com.bit.lms.model.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -36,10 +37,34 @@ public class NoticeDao {
 		return list;
 	}
 	
-	//추가
-	public void addList(){
+	
+	//상세보기
+	public void detailOne(int num){
 		
 	}
+	
+	//추가 (nextval로 num, sysdate로 regdate)
+	public void addList(String subject, String content, int topstate){
+		
+	}
+	
+	//수정
+	public void editOne(int num, String sub, int topstate){
+		
+	}
+	
+	//삭제
+	public void deleteOne(int num){
+		
+	}
+	/*
+	 * private int 	num;			//공지사항 번호
+	private String	subject;		//공지사항 제목
+	private String	content;		//공지사항 내용
+	private Date	regdate;		//공지사항 등록일자
+	private int		topstate;		//공지사항 상단노출상태값(0:공지사항x, 1:공지사항o)
+	 */
+	
 	
 	
 }
