@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class NoticeDto {
 	
-	//공지사항
+	//공지사항(test)
 	private int 	num;			//공지사항 번호
 	private String	subject;		//공지사항 제목
 	private String	content;		//공지사항 내용
