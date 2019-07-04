@@ -34,11 +34,4 @@ public class UserDao {
 		return 0;
 	}
 	
-	
-	public String findPw2(String id, int pwq, String pwa){
-		
-		return null;
-	}
-	
-	
 }
