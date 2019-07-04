@@ -1,21 +1,21 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 import java.sql.Date;
 
 public class QnaDto {
 	
 	//Q&A
-	private int		num;			//ÁúÀÇÀÀ´ä¹øÈ£
-	private String	qSub;			//Áú¹®Á¦¸ñ
-	private String	qContent;		//Áú¹®³»¿ë
-	private Date	regDate;		//Áú¹®µî·ÏÀÏÀÚ
-	private String	aSub;			//´äº¯Á¦¸ñ
-	private String	aContent;		//´äº¯³»¿ë
-	private Date	updateDate;		//´äº¯µî·ÏÀÏÀÚ
+	private int	num;			//ì§ˆì˜ì‘ë‹µë²ˆí˜¸
+	private String	qSub;			//ì§ˆë¬¸ì œëª©
+	private String	qContent;		//ì§ˆë¬¸ë‚´ìš©
+	private Date	regDate;		//ì§ˆë¬¸ë“±ë¡ì¼ì
+	private String	aSub;			//ë‹µë³€ì œëª©
+	private String	aContent;		//ë‹µë³€ë‚´ìš©
+	private Date	updateDate;		//ë‹µë³€ë“±ë¡ì¼ì
 	
-	private UserDto user;			//»ç¿ëÀÚ¹øÈ£(user.num)
+	private UserDto user;			//ì‚¬ìš©ìë²ˆí˜¸(user.num)
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public QnaDto() {
 		
 	}

@@ -1,26 +1,26 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 public class AdminDto {
 	
-	//°ü¸®ÀÚ
-	private int 	num;		//°ü¸®ÀÚ¹øÈ£
-	private String 	id;			//°ü¸®ÀÚ¾ÆÀÌµğ
-	private String 	name;		//°ü¸®ÀÚÀÌ¸§ 
-	private String 	pw1;		//ÆĞ½º¿öµå
-	private String 	pw2;		//ÆĞ½º¿öµåÈ®ÀÎ
-	private String  hp;			//ÇÚµåÆù¹øÈ£
-	private String 	email;		//ÀÌ¸ŞÀÏ
-	private String 	sex;		//¼ºº°
-	private int		state;		//»óÅÂ°ª(0:°¡ÀÔ, 1:È¸¿øÅ»Åğ´ë±â)
-	private String	confirmNum;	//È®ÀÎ¹øÈ£
-	private String	pwA;		//ºñ¹Ğ¹øÈ£´ä
+	//ê´€ë¦¬ì
+	private int 	num;		//ê´€ë¦¬ìë²ˆí˜¸
+	private String 	id;			//ê´€ë¦¬ìì•„ì´ë””
+	private String 	name;		//ê´€ë¦¬ìì´ë¦„ 
+	private String 	pw1;		//íŒ¨ìŠ¤ì›Œë“œ
+	private String 	pw2;		//íŒ¨ìŠ¤ì›Œë“œí™•ì¸
+	private String  hp;			//í•¸ë“œí°ë²ˆí˜¸
+	private String 	email;		//ì´ë©”ì¼
+	private String 	sex;		//ì„±ë³„
+	private int		state;		//ìƒíƒœê°’(0:ê°€ì…, 1:íšŒì›íƒˆí‡´ëŒ€ê¸°)
+	private String	confirmNum;	//í™•ì¸ë²ˆí˜¸
+	private String	pwA;		//ë¹„ë°€ë²ˆí˜¸ë‹µ
 
-	//Á÷±Ş(°ü¸®ÀÚºÎ¼­)
-	private DeptDto	dept;		//Á÷±Ş¹øÈ£(dept.num)		
-	//ºñ¹Ğ¹øÈ£Ã£±â
-	private PwfDto	pwf;		//ºñ¹Ğ¹øÈ£Ã£±â¹øÈ£(pwf.num)
+	//ì§ê¸‰(ê´€ë¦¬ìë¶€ì„œ)
+	private DeptDto	dept;		//ì§ê¸‰ë²ˆí˜¸(dept.num)		
+	//ë¹„ë°€ë²ˆí˜¸ì°¾ê¸°
+	private PwfDto	pwf;		//ë¹„ë°€ë²ˆí˜¸ì°¾ê¸°ë²ˆí˜¸(pwf.num)
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public AdminDto() {
 		
 	}

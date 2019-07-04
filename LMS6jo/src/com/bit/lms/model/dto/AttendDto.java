@@ -1,15 +1,15 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 import java.sql.Date;
 
 public class AttendDto {
-	//Ãâ°á°ü¸®
-	private int		num;			//Ãâ°á¹øÈ£
-	private int		state;			//Ãâ°á»óÅÂ(1:Ãâ¼®,2:Áö°¢,3:Á¶Åğ,4:°á¼®)
-	private Date	attDate;		//Ãâ°áÀÏÀÚ
+	//ì¶œê²°ê´€ë¦¬
+	private int		num;			//ì¶œê²°ë²ˆí˜¸
+	private int		state;			//ì¶œê²°ìƒíƒœ(1:ì¶œì„,2:ì§€ê°,3:ì¡°í‡´,4:ê²°ì„)
+	private Date	attDate;		//ì¶œê²°ì¼ì
 	
-	//»ç¿ëÀÚ
-	private UserDto user;			//»ç¿ëÀÚ¹øÈ£(user.num)
+	//ì‚¬ìš©ì
+	private UserDto user;			//ì‚¬ìš©ìë²ˆí˜¸(user.num)
 	
 	//getter, setter
 	public AttendDto() {

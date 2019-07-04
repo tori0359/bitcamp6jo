@@ -1,14 +1,14 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 public class ScoreDto {
 	
-	//¼ºÀû°ü¸®
-	private int		num;		// ¼ºÀû¹øÈ£
-	private int		testNum;	// ½ÃÇè¹øÈ£
-	private int		testScore;	// ½ÃÇèÁ¡¼ö
+	//ì„±ì ê´€ë¦¬
+	private int		num;		// ì„±ì ë²ˆí˜¸
+	private int		testNum;	// ì‹œí—˜ë²ˆí˜¸
+	private int		testScore;	// ì‹œí—˜ì ìˆ˜
 	
-	//»ç¿ëÀÚ
-	private UserDto	user;		// »ç¿ëÀÚ¹øÈ£(user.num)
+	//ì‚¬ìš©ì
+	private UserDto	user;		// ì‚¬ìš©ìë²ˆí˜¸(user.num)
 	
 	public ScoreDto() {
 		

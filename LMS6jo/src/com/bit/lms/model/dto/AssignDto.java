@@ -1,21 +1,21 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 import java.sql.Date;
 
 public class AssignDto {
 
-	//°úÁ¦°ü¸®
-	private int 	num;		// °úÁ¦¹øÈ£
-	private String	name;		// °úÁ¦Á¦¸ñ
-	private String	content;	// °úÁ¦³»¿ë
-	private Date	regdate;	// °úÁ¦µî·ÏÀÏÀÚ
-	private String	fileName;	// ÆÄÀÏ¸í
-	private String	firlPath;	// ÆÄÀÏ°æ·Î
+	//ê³¼ì œê´€ë¦¬
+	private int 	num;		// ê³¼ì œë²ˆí˜¸
+	private String	name;		// ê³¼ì œì œëª©
+	private String	content;	// ê³¼ì œë‚´ìš©
+	private Date	regdate;	// ê³¼ì œë“±ë¡ì¼ì
+	private String	fileName;	// íŒŒì¼ëª…
+	private String	firlPath;	// íŒŒì¼ê²½ë¡œ
 	
-	//»ç¿ëÀÚ
-	private UserDto user;		// »ç¿ëÀÚ¹øÈ£(user.num)
+	//ì‚¬ìš©ì
+	private UserDto user;		// ì‚¬ìš©ìë²ˆí˜¸(user.num)
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public AssignDto() {
 		
 	}

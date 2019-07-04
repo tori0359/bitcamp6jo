@@ -1,23 +1,23 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 import java.sql.Date;
 
 public class SubjectDto {
 	
-	//°­ÁÂ
-	private int 		num;			// °­ÁÂ¹øÈ£
-	private String		name;			// °­ÁÂ¸í
-	private String		content;		// °­ÁÂ¼³¸í
-	private int			limitNum;		// °­ÁÂÁ¦ÇÑÀÎ¿ø
-	private String		limitEnd;		// ¼ö°­¸¶°¨ÀÏ
-	private String		eduStart;		// °³°­ÀÏÀÚ
-	private String		eduEnd;			// Á¾°­ÀÏÀÚ
-	private Date		regdate;		// °­ÁÂÀÛ¼ºÀÏÀÚ
-	private int			classNum;		// ¹İ¹øÈ£
-	private String		className;		// ¹İ¸í
+	//ê°•ì¢Œ
+	private int 		num;			// ê°•ì¢Œë²ˆí˜¸
+	private String		name;			// ê°•ì¢Œëª…
+	private String		content;		// ê°•ì¢Œì„¤ëª…
+	private int			limitNum;		// ê°•ì¢Œì œí•œì¸ì›
+	private String		limitEnd;		// ìˆ˜ê°•ë§ˆê°ì¼
+	private String		eduStart;		// ê°œê°•ì¼ì
+	private String		eduEnd;			// ì¢…ê°•ì¼ì
+	private Date		regdate;		// ê°•ì¢Œì‘ì„±ì¼ì
+	private int			classNum;		// ë°˜ë²ˆí˜¸
+	private String		className;		// ë°˜ëª…
 	
-	//°ü¸®ÀÚ
-	private AdminDto	admin;			//°ü¸®ÀÚ¹øÈ£(admin.num)
+	//ê´€ë¦¬ì
+	private AdminDto	admin;			//ê´€ë¦¬ìë²ˆí˜¸(admin.num)
 
 	//getter, setter
 	public SubjectDto() {

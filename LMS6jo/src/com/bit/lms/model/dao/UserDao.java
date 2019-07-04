@@ -1,28 +1,28 @@
-package com.bit.lms.model.dao;
+ï»¿package com.bit.lms.model.dao;
 
 import com.bit.lms.model.dto.UserDto;
 
-//»ç¿ëÀÚDao
+//ì‚¬ìš©ì
 public class UserDao {
 	
-	//È¸¿ø°¡ÀÔ
+	//íšŒì›ê°€ì…
 	public int joinUs(UserDto user){
 		return 0;
 	}
 	
-	//·Î±×ÀÎ(·Î±×¾Æ¿ôÀº session¿¡¼­ Ã³¸®ÇÑ´Ù.)
+	//ë¡œê·¸ì¸(ë¡œê·¸ì•„ì›ƒ sessionì²˜ë¦¬)
 	public int login(String id, String pwd){
 		
 		return 0;
 	}
 	
-	//ºñ¹Ğ¹øÈ£ Ã£±â
+	//ë¹„ë°€ë²ˆí˜¸ì°¾ê¸° - id
 	public String findPw(String id, int pwq, String pwa){
 		
 		return null;
 	}
 	
-	//ºñ¹Ğ¹øÈ£ º¯°æ
+	//ë¹„ë°€ë²ˆí˜¸ì°¾ê¸°
 	public int updPw(String pw1, String pw2){
 		
 		return 0;

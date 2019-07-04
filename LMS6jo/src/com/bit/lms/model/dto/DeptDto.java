@@ -1,12 +1,12 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 public class DeptDto {
 	
-	//ºÎ¼­
-	private int 	num;		//ºÎ¼­¹øÈ£
-	private String 	name;		//ºÎ¼­¸í(1:°­»ç, 2:¿µ¾÷ÆÀ, 3:ÇàÁ¤ÆÀ, 4:Ãë¾÷ÆÀ, 5:È¸°èÆÀ)
+	//ë¶€ì„œ
+	private int 	num;		//ë¶€ì„œë²ˆí˜¸
+	private String 	name;		//ë¶€ì„œëª…(1:ê°•ì‚¬, 2:ì˜ì—…íŒ€, 3:í–‰ì •íŒ€, 4:ì·¨ì—…íŒ€, 5:íšŒê³„íŒ€)
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public DeptDto() {
 		
 	}

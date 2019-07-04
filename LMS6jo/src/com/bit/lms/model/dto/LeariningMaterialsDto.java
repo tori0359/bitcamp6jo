@@ -1,20 +1,20 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 import java.sql.Date;
 
 public class LeariningMaterialsDto {
 	
-	//ÇĞ½ÀÀÚ·á
-	private int 	num;		//ÇĞ½ÀÀÚ·á¹øÈ£
-	private String 	name;		//ÇĞ½ÀÀÚ·áÀÌ¸§
-	private Date	regdate;	//ÇĞ½ÀÀÚ·áµî·ÏÀÏÀÚ
-	private String	fileName;	//ÆÄÀÏ¸í
-	private String 	filePath;	//ÆÄÀÏ°æ·Î
+	//í•™ìŠµìë£Œ
+	private int 	num;		//í•™ìŠµìë£Œë²ˆí˜¸
+	private String 	name;		//í•™ìŠµìë£Œì´ë¦„
+	private Date	regdate;	//í•™ìŠµìë£Œë“±ë¡ì¼ì
+	private String	fileName;	//íŒŒì¼ëª…
+	private String 	filePath;	//íŒŒì¼ê²½ë¡œ
 	
-	//°ü¸®ÀÚ °´Ã¼
-	private AdminDto admin;		//°ü¸®ÀÚ¹øÈ£(admin.num)
+	//ê´€ë¦¬ì ê°ì²´
+	private AdminDto admin;		//ê´€ë¦¬ìë²ˆí˜¸(admin.num)
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public LeariningMaterialsDto() {
 		
 	}

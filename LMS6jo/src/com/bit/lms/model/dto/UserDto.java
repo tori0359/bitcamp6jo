@@ -1,31 +1,31 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 import java.sql.Date;
 
 public class UserDto {
 	
-	//»ç¿ëÀÚ
-	private int 		num;		//»ç¿ëÀÚ¹øÈ£
-	private String 		id;			//»ç¿ëÀÚ¾ÆÀÌµğ
-	private String 		name;		//»ç¿ëÀÚÀÌ¸§ 
-	private String 		pw1;		//ÆĞ½º¿öµå
-	private String 		pw2;		//ÆĞ½º¿öµåÈ®ÀÎ
-	private String  	hp;			//ÇÚµåÆù¹øÈ£
-	private String 		email;		//ÀÌ¸ŞÀÏ
-	private String 		sex;		//¼ºº°
-	private int			subject;	//Èñ¸Á°­ÁÂ(1:Java¹İ, 2:DB¹İ, 3:Web¹İ)
-	private Date		regdate;	//µî·ÏÀÏÀÚ
-	private int			state;		//»óÅÂ°ª(0:°¡ÀÔ, 1:È¸¿øÅ»Åğ´ë±â)
-	private String		pwA;		//ºñ¹Ğ¹øÈ£´ä
-	private int			joinPath;	//°¡ÀÔ°æ·Î(1:ÀÎÅÍ³İ±¤°í,2:°í¿ë¼¾ÅÍÃßÃµ,3:ÁöÀÎÃßÃµ)
+	//ì‚¬ìš©ì
+	private int 		num;		//ì‚¬ìš©ìë²ˆí˜¸
+	private String 		id;			//ì‚¬ìš©ìì•„ì´ë””
+	private String 		name;		//ì‚¬ìš©ìì´ë¦„ 
+	private String 		pw1;		//íŒ¨ìŠ¤ì›Œë“œ
+	private String 		pw2;		//íŒ¨ìŠ¤ì›Œë“œí™•ì¸
+	private String  	hp;			//í•¸ë“œí°ë²ˆí˜¸
+	private String 		email;		//ì´ë©”ì¼
+	private String 		sex;		//ì„±ë³„
+	private int			subject;	//í¬ë§ê°•ì¢Œ(1:Javaë°˜, 2:DBë°˜, 3:Webë°˜)
+	private Date		regdate;	//ë“±ë¡ì¼ì
+	private int			state;		//ìƒíƒœê°’(0:ê°€ì…, 1:íšŒì›íƒˆí‡´ëŒ€ê¸°)
+	private String		pwA;		//ë¹„ë°€ë²ˆí˜¸ë‹µ
+	private int			joinPath;	//ê°€ì…ê²½ë¡œ(1:ì¸í„°ë„·ê´‘ê³ ,2:ê³ ìš©ì„¼í„°ì¶”ì²œ,3:ì§€ì¸ì¶”ì²œ)
 	
-	//°­ÁÂ
-	private SubjectDto	sub;		//°­ÁÂ¹øÈ£(sub.num)
+	//ê°•ì¢Œ
+	private SubjectDto	sub;		//ê°•ì¢Œë²ˆí˜¸(sub.num)
 	
-	//ºñ¹Ğ¹øÈ£Ã£±â
-	private AdminDto	pwf;		//ºñ¹Ğ¹øÈ£Ã£±â¹øÈ£(pwf.num)
+	//ë¹„ë°€ë²ˆí˜¸ì°¾ê¸°
+	private AdminDto	pwf;		//ë¹„ë°€ë²ˆí˜¸ì°¾ê¸°ë²ˆí˜¸(pwf.num)
 	
-	//±âº»»ı¼ºÀÚ
+	//ê¸°ë³¸ìƒì„±ì
 	public UserDto() {
 		
 	}

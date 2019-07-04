@@ -1,18 +1,18 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 import java.sql.Date;
 
 public class NoticeDto {
 	
-	//°øÁö»çÇ×
-	private int 	num;			//°øÁö»çÇ× ¹øÈ£
-	private String	subject;		//°øÁö»çÇ× Á¦¸ñ
-	private String	content;		//°øÁö»çÇ× ³»¿ë
-	private Date	regdate;		//°øÁö»çÇ× µî·ÏÀÏÀÚ
-	private int		topstate;		//°øÁö»çÇ× »ó´Ü³ëÃâ»óÅÂ°ª(0:°øÁö»çÇ×x, 1:°øÁö»çÇ×o)
+	//ê³µì§€ì‚¬í•­
+	private int 	num;			//ê³µì§€ì‚¬í•­ ë²ˆí˜¸
+	private String	subject;		//ê³µì§€ì‚¬í•­ ì œëª©
+	private String	content;		//ê³µì§€ì‚¬í•­ ë‚´ìš©
+	private Date	regdate;		//ê³µì§€ì‚¬í•­ ë“±ë¡ì¼ì
+	private int		topstate;		//ê³µì§€ì‚¬í•­ ìƒë‹¨ë…¸ì¶œìƒíƒœê°’(0:ê³µì§€ì‚¬í•­x, 1:ê³µì§€ì‚¬í•­o)
 	
-	//°ü¸®ÀÚ °´Ã¼
-	private AdminDto admin;		//°ü¸®ÀÚ¹øÈ£(admin.num)
+	//ê´€ë¦¬ì ê°ì²´
+	private AdminDto admin;		//ê´€ë¦¬ìë²ˆí˜¸(admin.num)
 	
 	public NoticeDto() {
 		

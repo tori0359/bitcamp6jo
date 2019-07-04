@@ -1,12 +1,12 @@
-package com.bit.lms.model.dto;
+ï»¿package com.bit.lms.model.dto;
 
 public class PwfDto {
 	
-	//ºñ¹Ğ¹øÈ£Ã£±â
-	private int num;		//ºñ¹Ğ¹øÈ£Ã£±â ¹øÈ£
-	private String name;	//ºñ¹Ğ¹øÈ£Ã£±â Áú¹®¸í
+	//ë¹„ë°€ë²ˆí˜¸ì°¾ê¸°
+	private int num;		//ë¹„ë°€ë²ˆí˜¸ì°¾ê¸° ë²ˆí˜¸
+	private String name;	//ë¹„ë°€ë²ˆí˜¸ì°¾ê¸° ì§ˆë¬¸ëª…
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public PwfDto() {
 		
 	}
