@@ -11,7 +11,7 @@ public class NoticeDto {
 	private Date	regdate;		//공지사항 등록일자
 	private int		topstate;		//공지사항 상단노출상태값(0:공지사항x, 1:공지사항o)
 	
-	//관리자 객체1111
+	//관리자 객체
 	private AdminDto admin;		//관리자번호(admin.num)
 	
 	public NoticeDto() {
