@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class AssignDto {
 
-	//과제관리
+	//과제관리 ㄱㅈㄱㄹ
 	private int 	num;		// 과제번호
 	private String	name;		// 과제제목
 	private String	content;	// 과제내용
