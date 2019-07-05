@@ -230,13 +230,14 @@ CONSTRAINT  R_13 FOREIGN KEY (adno) REFERENCES admins(adno)
 
 
 --DUMMY
-insert into dept values (dept_seq.nextval, '°­»ç');
-insert into dept values (dept_seq.nextval, 'ÇàÁ¤');
-insert into dept values (dept_seq.nextval, '¿µ¾÷');
+insert into dept values (dept_seq.nextval, 'ê°•ì‚¬');
+insert into dept values (dept_seq.nextval, 'í–‰ì •');
+insert into dept values (dept_seq.nextval, 'ì˜ì—…');
 
-insert into pwfind values (pwfind_seq.nextval, 'º¸¹° 1È£');
-insert into pwfind values (pwfind_seq.nextval, 'ÃÊµîÇĞ±³ ÀÌ¸§');
-insert into pwfind values (pwfind_seq.nextval, 'ÁßÇĞ±³ ÀÌ¸§');
-insert into pwfind values (pwfind_seq.nextval, '°íµîÇĞ±³ ÀÌ¸§');
+insert into pwfind values (pwfind_seq.nextval, 'ë³´ë¬¼1í˜¸ëŠ”?');
+insert into pwfind values (pwfind_seq.nextval, 'ì•„ë²„ì§€ì´ë¦„?');
+insert into pwfind values (pwfind_seq.nextval, 'ì¢‹ì•„í•˜ëŠ”ìƒ‰ê¹”ì€?');
+insert into pwfind values (pwfind_seq.nextval, 'ì¢‹ì•„í•˜ëŠ”ìºë¦­í„°ëŠ”?');
 
-insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'È«±æµ¿','adad','1234','1234','010-1234-5678','asd@naver.com',1,'ÀÏÁøÃÊ',2,1);
+insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'ê´€ë¦¬ì','admin','1234','1234','01012345678','asd@naver.com',1,'a',2,1);
+commit
