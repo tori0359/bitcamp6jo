@@ -114,7 +114,7 @@ CREATE TABLE subject
 	edustart              VARCHAR2(20)  NOT NULL ,
 	eduend                VARCHAR2(20)  NOT NULL ,
 	regdate               DATE  NULL ,
-	classno               NUMBER  NOT NULL ,
+	classno				  NUMBER NULL ,
 	classnm               VARCHAR2(20)  NULL ,
 	adno                  NUMBER  NOT NULL ,
 CONSTRAINT  XPKsubject PRIMARY KEY (subno),
@@ -133,7 +133,6 @@ CREATE TABLE users
 	cp                    VARCHAR2(20)  NOT NULL ,
 	email                 VARCHAR2(20)  NOT NULL ,
 	sex                   NUMBER  NULL ,
-	subject               VARCHAR2(20)  NULL ,
 	regdate               DATE  NULL ,
 	pwa                   VARCHAR2(20)  NOT NULL ,
 	jpath                 NUMBER  NOT NULL ,
@@ -150,11 +149,11 @@ CONSTRAINT  R_16 FOREIGN KEY (subno) REFERENCES subject(subno)
 CREATE TABLE qna
 (
 	qnano                 NUMBER  NOT NULL ,
-	qsub                  VARCHAR2(20)  NULL ,
-	qcontent              VARCHAR2(20)  NULL ,
+	qsub                  VARCHAR2(50)  NULL ,
+	qcontent              VARCHAR2(1000)  NULL ,
 	regdate               DATE  NULL ,
-	asub                  VARCHAR2(20)  NULL ,
-	acontent              VARCHAR2(20)  NULL ,
+	asub                  VARCHAR2(50)  NULL ,
+	acontent              VARCHAR2(1000)  NULL ,
 	updatedate            DATE  NULL ,
 	userno                NUMBER  NOT NULL ,
 CONSTRAINT  XPKqna PRIMARY KEY (qnano),
@@ -230,13 +229,36 @@ CONSTRAINT  R_13 FOREIGN KEY (adno) REFERENCES admins(adno)
 
 
 --DUMMY
-insert into dept values (dept_seq.nextval, '����');
-insert into dept values (dept_seq.nextval, '����');
-insert into dept values (dept_seq.nextval, '����');
+insert into dept values (dept_seq.nextval, '강사');
+insert into dept values (dept_seq.nextval, '행정');
+insert into dept values (dept_seq.nextval, '영업');
 
-insert into pwfind values (pwfind_seq.nextval, '���� 1ȣ');
-insert into pwfind values (pwfind_seq.nextval, '�ʵ��б� �̸�');
-insert into pwfind values (pwfind_seq.nextval, '���б� �̸�');
-insert into pwfind values (pwfind_seq.nextval, '�����б� �̸�');
+insert into pwfind values (pwfind_seq.nextval, '보물 1호');
+insert into pwfind values (pwfind_seq.nextval, '초등학교 이름');
+insert into pwfind values (pwfind_seq.nextval, '중학교 이름');
+insert into pwfind values (pwfind_seq.nextval, '고등학교 이름');
 
-insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'ȫ�浿','adad','1234','1234','010-1234-5678','asd@naver.com',1,'������',2,1);
+
+insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'홍길동','lecture','1234','1234','010-1234-5678','asd@naver.com',1,'일진초',2,1);
+insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'고길동','admin','1234','1234','010-5678-1234','asaaad@naver.com',1,'일진중',3,2);
+insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'김길동','sales','1234','1234','010-5678-1234','asaaad@naver.com',2,'일진고',4,3);
+
+insert into LearningMaterials (lmno,lmnm,regdate,adno) values (LearningMaterials_seq.nextval, 'java자료1', sysdate, 1);
+insert into LearningMaterials (lmno,lmnm,regdate,adno) values (LearningMaterials_seq.nextval, 'java자료2', sysdate, 1);
+
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항1','공지사항내용1',sysdate,1,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항2','공지사항내용2',sysdate,1,3);
+
+insert into SUBJECT (subno,subnm,subcontent,limitno,limitend,edustart,eduend,regdate,classno,classnm,adno) values 
+(subject_seq.nextval,'java과정','java과정입니다',20,'2019-08-07','2019-08-12','2019-10-10',sysdate,1,'java반',1);
+
+insert into USERS (userno,id,name,pw1,pw2,cp,email,sex,regdate,pwa,jpath,pwfno,subno,classno) values 
+(users_seq.nextval,'myid','김두두','1234','1234','010-4567-1234','qwe@naver.com',1,sysdate,'마우스',1,1,1,1);
+
+insert into ATTEND (attno,state,attdate,userno) values (attend_seq.nextval,0,sysdate,1);
+
+insert into qna (qnano,qsub,qcontent,regdate,userno) values (qna_seq.nextval, '질문1', '이게 궁금합니다', sysdate, 1);
+
+insert into assign (assno,assnm,asscontent,regdate,userno) values (assign_seq.nextval,'과제1','과제내용',sysdate,1);
+
+insert into score (scoreno,testno,testscore,userno) values (score_seq.nextval,1,80,1);
