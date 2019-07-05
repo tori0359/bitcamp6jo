@@ -24,12 +24,24 @@
                 <li>|</li>
                 <li><a href="#">안양센터</a></li>
             </ul>
+            <div class="signout">
+            	<a href="">로그아웃</a>
+            </div>
+            <div class="loginClear">
+            	<a href="">홍길동님 환영합니다</a>
+            </div>
+            <div id="LMSGO">
+            	<a href="">LMS</a>
+            </div>
+            
+            <!-- 
             <div class="login">
             	<a href="">로그인</a>
             </div>
             <div class="sign">
             	<a href="">회원가입</a>
             </div>
+             -->
         </div>
         <div>
             <img src="<%=root %>/imgs/toplogo.PNG">
