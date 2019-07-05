@@ -32,7 +32,7 @@
             </div>
         </div>
         <div>
-            <img src="imgs/toplogo.PNG">
+            <img src="<%=root %>/imgs/toplogo.PNG">
         </div>
         <div id="header">
             <ul class="menu">
