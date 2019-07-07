@@ -7,8 +7,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel= "stylesheet" type="text/css" href="<%=root %>/css/main.css">
-    <link rel= "stylesheet" type="text/css" href="<%=root %>/css/popup.css">
+    <link rel= "stylesheet" type="text/css" href="<%=root %>/css/teacher.css">
+    <script src="<%=root %>/js/jquery-1.12.4.js"></script>
 </head>
 <body>
         <div id="topheader">
