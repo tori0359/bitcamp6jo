@@ -240,4 +240,4 @@ insert into pwfind values (pwfind_seq.nextval, '좋아하는색깔은?');
 insert into pwfind values (pwfind_seq.nextval, '좋아하는캐릭터는?');
 
 insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'관리자','admin','1234','1234','01012345678','asd@naver.com',1,'a',2,1);
-commit
+commit;
