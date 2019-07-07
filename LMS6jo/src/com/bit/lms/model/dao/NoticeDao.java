@@ -15,20 +15,20 @@ public class NoticeDao {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	
-	private void getConnection(){
-		String driver="oracle.jdbc.driver.OracleDirver";
-		String url="jdbc:oracle:thin:@localhost:1521:xe";
-		String user="hr";
-		String password="hr";
-		try {
-			Class.forName(driver);
-			conn=DriverManager.getConnection(url, user, password);
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-	}
+//	private void getConnection(){
+//		String driver="oracle.jdbc.driver.OracleDirver";
+//		String url="jdbc:oracle:thin:@localhost:1521:xe";
+//		String user="hr";
+//		String password="hr";
+//		try {
+//			Class.forName(driver);
+//			conn=DriverManager.getConnection(url, user, password);
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//	}
 
 	//목록불러오기!!
 	public ArrayList<NoticeDto> list(){
