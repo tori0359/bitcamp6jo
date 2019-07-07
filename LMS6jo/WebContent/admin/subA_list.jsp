@@ -25,7 +25,13 @@
 					</tr>
 				</thead>
 				<tbody>
-					
+					<tr>
+						<td>1</td>
+						<td>java강좌</td>
+						<td>김강사</td>
+						<td>20</td>
+						<td>2019-08-08</td>
+					</tr>
 				</tbody>
 			</table>
 			</center>

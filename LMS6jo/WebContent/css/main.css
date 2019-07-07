@@ -35,7 +35,7 @@ a{text-decoration: none}
 
 
 
-#leftMenu{width: 200px; float:left;}
+#leftMenu{width: 200px; float:left; display:}
 #leftMenu ul{list-style-type: none;margin: 0;padding: 0;height: 400px;background-color: #42597B;}
 #leftMenu li a{display: block;color: white;padding: 8px 16px;text-decoration: none;}
 #leftMenu li a.active{padding: 32px 16px; background-color: #1B4A9C;color: white;}
@@ -43,38 +43,6 @@ a{text-decoration: none}
 
 #mainA{margin: 37px 0px;}
 
-#lectureList{border: 1px solid black;}
-
-#lectureDetail>div>div:nth-child(2n-1){
-    line-height: 30px;
-    text-align: center;
-    display: inline-block;
-    width: 100px;
-    height: 30px;
-    text-decoration: none;
-    color: navy;
-    background-color: gray;
-    margin: 1px auto;
-}
-#lectureDetail>div>div:nth-child(2n){
-    line-height: 30px;
-    display: inline-block;
-    width: 100px;
-    height: 30px;
-    text-decoration: none;
-    color: navy;
-    margin: 1px auto;
-}
-#lectureDetail>ul>li{line-height: 50px;
-                text-align: center;
-                display: inline-block;
-                width: 100px;
-                height: 50px;
-                text-decoration: none;
-                color: navy;
-                background-color: gray;
-                float: right;
-                }
 
 .sub1{padding-left: 205px;}
 .sub2{padding-left: 255px;}
