@@ -11,13 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/teacher/score/upd.lms")
 public class ScoreUpdController extends HttpServlet{
 
-	//입력
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 	}
-	
-	//수정
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
