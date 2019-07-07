@@ -25,7 +25,7 @@ public class AssignDao {
 	}
 	
 	//과제삭제 - 수강생
-	public int deleteAssign(){
+	public int assignDel(){
 		
 		return 0;
 	}
