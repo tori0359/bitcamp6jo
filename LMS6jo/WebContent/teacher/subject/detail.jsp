@@ -27,7 +27,11 @@
 				</tr>
 				<tr>
 					<th class="file">파일명</th>
-					<td colspan="3"><a id="subjectName" href="#"><%=bean.getFileName() %></a></td>
+					<td colspan="3">
+						<% if(bean.getFileName()!=null){%>
+							<a id="subjectName" href="#"><%=bean.getFileName() %></a>
+						<% }%>
+					</td>
 				</tr>
 			<%
 			

@@ -17,8 +17,6 @@ public class AssignListController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-			
-		
 			AssignDao dao = new AssignDao();
 			req.setAttribute("assignList", dao.assignList());
 

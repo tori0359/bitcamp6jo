@@ -30,7 +30,7 @@
 						<td>
 						<% if(bean.getFileName()!=null){%>
 							<a href="#">
-							<i class="fa fa-file-text-o"></i>
+								<i class="fa fa-file-text-o"></i>
 							</a>
 						<% }%>
 						</td>

@@ -74,12 +74,13 @@ public class AssignDao {
 	//과제상세목록 - 강사
 	public AssignDto assignDetail(int num){
 		AssignDto bean = new AssignDto();
-		String sql = "SELECT A.ASSNO AS ASSNO, (SELECT B.NAME FROM USERS B WHERE A.ASSNO=1) AS NAME, A.ASSNM AS ASSNM, "
+		String sql = "SELECT A.ASSNO AS ASSNO, (SELECT B.NAME FROM USERS B WHERE A.ASSNO=?) AS NAME, A.ASSNM AS ASSNM, "
 				+ "A.REGDATE AS REGDATE, A.ASSCONTENT AS ASSCONTENT, A.FILENM AS FILENM, A.FILEPATH AS FILEPATH FROM ASSIGN A WHERE A.ASSNO=?";
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
+			pstmt.setInt(2, num);
 			rs = pstmt.executeQuery();
 			if(rs.next()){
 				bean.setNum(rs.getInt("assno"));
