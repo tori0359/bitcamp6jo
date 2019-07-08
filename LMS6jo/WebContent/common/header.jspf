@@ -1,14 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String root = request.getContextPath(); // root = /LMS6jo
+%>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel= "stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel= "stylesheet" type="text/css" href="<%=root %>/css/main.css">
+    <link rel= "stylesheet" type="text/css" href="<%=root %>/css/teacher.css">
+    <script src="<%=root %>/js/jquery-1.12.4.js"></script>
 </head>
 <body>
         <div id="topheader">
             <ul class="topmenu">
+            	<li></li>
                 <li><a href="#">서초본원</a></li>
                 <li>|</li>
                 <li><a href="#">강남센터</a></li>
@@ -19,15 +26,27 @@
                 <li>|</li>
                 <li><a href="#">안양센터</a></li>
             </ul>
+            <div class="signout">
+            	<a href="">로그아웃</a>
+            </div>
+            <div class="loginClear">
+            	<a href="">홍길동님 환영합니다</a>
+            </div>
+            <div id="LMSGO">
+            	<a href="">LMS</a>
+            </div>
+            
+            <!-- 
             <div class="login">
-            <a href="">로그인</a>
+            	<a href="">로그인</a>
             </div>
             <div class="sign">
-            <a href="">회원가입</a>
+            	<a href="">회원가입</a>
             </div>
+             -->
         </div>
         <div>
-            <img src="imgs/toplogo.PNG">
+            <img src="<%=root %>/imgs/toplogo.PNG">
         </div>
         <div id="header">
             <ul class="menu">
