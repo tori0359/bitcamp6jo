@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/teacher/score/list.lms")
+
 public class ScoreListController extends HttpServlet{
 
 	@Override

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/admin/sub/detail.lms")
+
 public class SubjectDetailController extends HttpServlet{
 
 	@Override

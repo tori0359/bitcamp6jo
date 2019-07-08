@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/user/qna/detail.lms")
+
 public class UserQnaDetailController extends HttpServlet{
 
 	@Override

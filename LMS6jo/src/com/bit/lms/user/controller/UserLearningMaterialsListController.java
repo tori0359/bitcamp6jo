@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/user/lm/list.lms")
+
 public class UserLearningMaterialsListController extends HttpServlet{
 
 	@Override

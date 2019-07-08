@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/teacher/mainT.lms")
+
 public class AdminMainController extends HttpServlet{
 
 	@Override

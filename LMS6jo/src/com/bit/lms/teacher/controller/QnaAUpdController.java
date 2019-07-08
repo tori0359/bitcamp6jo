@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/teacher/qna/upd.lms")
 public class QnaAUpdController extends HttpServlet{
 
 	//입력

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/user/sub/del.lms")
+
 public class UserSubDelController extends HttpServlet{
 
 	@Override

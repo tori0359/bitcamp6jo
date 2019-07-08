@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/admin/notice/add.lms")
+
 public class NoticeAddController extends HttpServlet{
 
 	@Override
