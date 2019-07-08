@@ -16,10 +16,10 @@
     </div>
 
 	<div id="content">
+    	<div id="subContent">
     	<ul>
     		<li><h2>과제제출</h2></li>
     	</ul><!-- 머야;;왜 리스트 쩜 안생겨.. -->
-    	<div id="subContent">
 			<div class="list_div">
 				<!--  <h1>과제관리</h1>-->
 				<table class="type11">
