@@ -21,7 +21,6 @@
 					list = (ArrayList<AssignDto>)request.getAttribute("assignList");
 					if(list != null){
 						for(AssignDto bean : list){
-							System.out.println("asdf");
 				%>
 					<tr>
 						<td><%=bean.getNum() %></td>
@@ -31,7 +30,7 @@
 						<td>
 						<% if(bean.getFileName()!=null){%>
 							<a href="#">
-							<i class="fa fa-file-text-o"></i>
+								<i class="fa fa-file-text-o"></i>
 							</a>
 						<% }%>
 						</td>
