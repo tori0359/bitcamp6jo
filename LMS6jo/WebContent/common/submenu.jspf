@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!-- 로그인을 하고 LMS를 누를 때 dept번호를 받아서 번호마다 다른 서브 메뉴 보이게 구현할것! -->
+<!-- 강사용 -->
+<div id="leftMenu">
+        <ul>
+           <li><a class="active">관리자 페이지</a></li>
+           <li><a href="<%=root%>/teacher/mainT.jsp">메인</a></li>
+           <li><a href="<%=root%>/teacher/attendT_list.jsp"">출결관리</a></li>
+           <li><a href="<%=root%>/teacher/subjectT_list.jsp">과제관리</a></li>
+           <li><a href="<%=root%>/teacher/lmT_list.jsp">학습자료관리</a></li>
+           <li><a href="<%=root%>/teacher/scoreT_list.jsp">성적관리</a></li>
+           <li><a href="<%=root%>/teacher/qnaQT_list.jsp">Q&A</a></li>
+       </ul>
+</div> 

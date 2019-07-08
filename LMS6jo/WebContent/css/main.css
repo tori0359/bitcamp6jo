@@ -3,20 +3,25 @@ div,ul,li{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align
 ul{list-style: none}
 a{text-decoration: none}
 
-#container{width:1570px;}
-
+    
 #topheader{background-color: black; width: 1570px; height: 40px;}
+#LMSGO{display: block; width: 80px; height: 40px; background-color: orange;float: right; }
+#LMSGO>a{display: block; font-size: 15px; color: white; font-weight: bold;margin-top: 8px;margin-left: 25px;}
 #topheader .topmenu{position: relative; margin: 0 auto;}
 #topheader .topmenu>li{float: left; margin-right: 15px; margin-left: 10px; margin-top: 8px;}
 #topheader .topmenu>li>a{display: block; font-size: 15px; color: white; font-weight: bold;}
-#topheader .topmenu>li:hover>a{color: orange}
+#topheader .topmenu>li:hover>a{color: orange;}
 #topheader .topmenu>li:nth-child(2n){color: white; font-weight: bold;}
 #topheader .login{display: block; width: 100px; height: 40px; background-color: #2980B9;float: right; } 
-#topheader .login>a{display: block; font-size: 15px; color: white; font-weight: bold;margin-top: 8px;margin-left: 25px;}   
+#topheader .login>a{display: block; font-size: 15px; color: white; font-weight: bold;margin-top: 8px;margin-left: 25px;}
 #topheader .sign{display: block; width: 100px; height: 40px; background-color: gray;float: right;}   
 #topheader .sign>a{display: block; font-size: 15px; color: white; font-weight: bold;margin-top: 8px; margin-left: 20px;}
+#topheader .signout{display: block; width: 100px; height: 40px; background-color: gray;float: right;}   
+#topheader .signout>a{display: block; font-size: 15px; color: white; font-weight: bold;margin-top: 8px; margin-left: 20px;}
+#topheader .loginClear{display: block; width: 200px; height: 40px; background-color: #2980B9;float: right; } 
+#topheader .loginClear>a{display: block; font-size: 15px; color: white; font-weight: bold;margin-top: 8px;margin-left: 25px;}   
 
-#header{background-color: #1B499B; width: 1570px; height: 45px; text-align: center;} 
+#header{background-color: #1B499B; width: 1570px; height: 45px; text-align: center; margin-bottom: 10px;} 
 #header .menu{text-align: center; display: inline-block;}
 #header .menu>li{float: left; margin-right: 30px; margin-left: 30px; margin-top: 10px;}
     
@@ -28,13 +33,49 @@ a{text-decoration: none}
 #header .menu>li>ul>li>a{color: white;}
 #header .menu>li>ul>li:hover>a{color: #1B499B;}
 
-#leftMenu{padding:10px; width: 180px; float:left;}
+
+
+#leftMenu{width: 200px; margin-right:10px; margin-bottom: 10px; float:left;}
 #leftMenu ul{list-style-type: none;margin: 0;padding: 0;height: 400px;background-color: #42597B;}
 #leftMenu li a{display: block;color: white;padding: 8px 16px;text-decoration: none;}
 #leftMenu li a.active{padding: 32px 16px; background-color: #1B4A9C;color: white;}
 #leftMenu li a:hover:not(.active){background-color: #555;color: #FFC90E;}
 
-#content{width:1370px; float:right;}
+
+#mainA{margin: 37px 0px;}
+
+#lectureList{border: 1px solid black;}
+
+#lectureDetail>div>div:nth-child(2n-1){
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    text-decoration: none;
+    color: navy;
+    background-color: gray;
+    margin: 1px auto;
+}
+#lectureDetail>div>div:nth-child(2n){
+    line-height: 30px;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    text-decoration: none;
+    color: navy;
+    margin: 1px auto;
+}
+#lectureDetail>ul>li{line-height: 50px;
+                text-align: center;
+                display: inline-block;
+                width: 100px;
+                height: 50px;
+                text-decoration: none;
+                color: navy;
+                background-color: gray;
+                float: right;
+                }
 
 .sub1{padding-left: 205px;}
 .sub2{padding-left: 255px;}
@@ -43,7 +84,7 @@ a{text-decoration: none}
 .sub6{padding-left: 975px;}
 .sub7{padding-left: 905px;}
 .sub8{padding-left: 955px;}
-    
-#mainimg{width: 1300px; margin-left: 40px;}
-#footer{clear:both; background-color: #1B499B; width: 1570px; height: 66px; text-align: center;}
+
+#mainimg{width: 1300px; margin-left: 150px;}
+#footer{background-color: #1B499B; width: 1570px; height: 66px; text-align: center;clear: both;}
 #footer>p{line-height: 2px;font-size: 14px; color: white; padding-top: 7px;}
