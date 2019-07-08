@@ -13,19 +13,19 @@ public class QnaDao {
 	}
 	
 	//질의응답 등록
-	public int qnaInsert(){
+	public int qnaAInsert(){
 		
 		return 0;
 	}
 	
 	//질의응답 수정
-	public int qnaUpdate(){
+	public int qnaAUpd(){
 		
 		return 0;
 	}
 	
 	//질의응답 삭제
-	public int qnaDelete(){
+	public int qnaADel(){
 		
 		return 0;
 	}

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <link rel= "stylesheet" type="text/css" href="css/attend.css">
-<%@include file="./common/header.jspf" %>
+    <link rel= "stylesheet" type="text/css" href="../css/attend.css">
+<%@include file="../common/header.jspf" %>
 	
 	<div id="leftMenu">
         <ul>
@@ -19,7 +19,7 @@
     	<h2>출결확인</h2>
     	<div id="attend_content">
     	<div id="attend_icon">
-    	<img id="user_icon" src="imgs/user_icon.png">
+    	<img id="user_icon" src="../imgs/user_icon.png">
     	</div>
     	<div id="div_progress_bar">
     	<table><!-- 출결확인 윗줄 아이콘 옆 자료 -->
@@ -52,7 +52,7 @@
     	</div>
     	
     	<div id="attend_table">
-    	as
+    	
     	<table class="attendCheck_table" id="attendCheck_table">
     		<tr>
     			<th>출석</th>
@@ -72,4 +72,4 @@
     	</div>
     	</div>
     </div>
-<%@include file="./common/footer.jspf" %>
+<%@include file="../common/footer.jspf" %>

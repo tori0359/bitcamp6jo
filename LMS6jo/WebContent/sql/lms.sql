@@ -114,7 +114,7 @@ CREATE TABLE subject
 	edustart              VARCHAR2(20)  NOT NULL ,
 	eduend                VARCHAR2(20)  NOT NULL ,
 	regdate               DATE  NULL ,
-	classno				  NUMBER NULL ,
+	classno               NUMBER  NOT NULL ,
 	classnm               VARCHAR2(20)  NULL ,
 	adno                  NUMBER  NOT NULL ,
 CONSTRAINT  XPKsubject PRIMARY KEY (subno),
@@ -133,6 +133,7 @@ CREATE TABLE users
 	cp                    VARCHAR2(20)  NOT NULL ,
 	email                 VARCHAR2(20)  NOT NULL ,
 	sex                   NUMBER  NULL ,
+	subject               VARCHAR2(20)  NULL ,
 	regdate               DATE  NULL ,
 	pwa                   VARCHAR2(20)  NOT NULL ,
 	jpath                 NUMBER  NOT NULL ,
@@ -149,11 +150,11 @@ CONSTRAINT  R_16 FOREIGN KEY (subno) REFERENCES subject(subno)
 CREATE TABLE qna
 (
 	qnano                 NUMBER  NOT NULL ,
-	qsub                  VARCHAR2(50)  NULL ,
-	qcontent              VARCHAR2(1000)  NULL ,
+	qsub                  VARCHAR2(20)  NULL ,
+	qcontent              VARCHAR2(20)  NULL ,
 	regdate               DATE  NULL ,
-	asub                  VARCHAR2(50)  NULL ,
-	acontent              VARCHAR2(1000)  NULL ,
+	asub                  VARCHAR2(20)  NULL ,
+	acontent              VARCHAR2(20)  NULL ,
 	updatedate            DATE  NULL ,
 	userno                NUMBER  NOT NULL ,
 CONSTRAINT  XPKqna PRIMARY KEY (qnano),
@@ -229,36 +230,15 @@ CONSTRAINT  R_13 FOREIGN KEY (adno) REFERENCES admins(adno)
 
 
 --DUMMY
-insert into dept values (dept_seq.nextval, '°­»ç');
-insert into dept values (dept_seq.nextval, 'ÇàÁ¤');
-insert into dept values (dept_seq.nextval, '¿µ¾÷');
+insert into dept values (dept_seq.nextval, 'ê°•ì‚¬');
+insert into dept values (dept_seq.nextval, 'í–‰ì •');
+insert into dept values (dept_seq.nextval, 'ì˜ì—…');
 
-insert into pwfind values (pwfind_seq.nextval, 'º¸¹° 1È£');
-insert into pwfind values (pwfind_seq.nextval, 'ÃÊµîÇÐ±³ ÀÌ¸§');
-insert into pwfind values (pwfind_seq.nextval, 'ÁßÇÐ±³ ÀÌ¸§');
-insert into pwfind values (pwfind_seq.nextval, '°íµîÇÐ±³ ÀÌ¸§');
+insert into pwfind values (pwfind_seq.nextval, 'ë³´ë¬¼1í˜¸ëŠ”?');
+insert into pwfind values (pwfind_seq.nextval, 'ì•„ë²„ì§€ì´ë¦„?');
+insert into pwfind values (pwfind_seq.nextval, 'ì¢‹ì•„í•˜ëŠ”ìƒ‰ê¹”ì€?');
+insert into pwfind values (pwfind_seq.nextval, 'ì¢‹ì•„í•˜ëŠ”ìºë¦­í„°ëŠ”?');
 
-
-insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'È«±æµ¿','lecture','1234','1234','010-1234-5678','asd@naver.com',1,'ÀÏÁøÃÊ',2,1);
-insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'°í±æµ¿','admin','1234','1234','010-5678-1234','asaaad@naver.com',1,'ÀÏÁøÁß',3,2);
-insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'±è±æµ¿','sales','1234','1234','010-5678-1234','asaaad@naver.com',2,'ÀÏÁø°í',4,3);
-
-insert into LearningMaterials (lmno,lmnm,regdate,adno) values (LearningMaterials_seq.nextval, 'javaÀÚ·á1', sysdate, 1);
-insert into LearningMaterials (lmno,lmnm,regdate,adno) values (LearningMaterials_seq.nextval, 'javaÀÚ·á2', sysdate, 1);
-
-insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'°øÁö»çÇ×1','°øÁö»çÇ×³»¿ë1',sysdate,1,3);
-insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'°øÁö»çÇ×2','°øÁö»çÇ×³»¿ë2',sysdate,1,3);
-
-insert into SUBJECT (subno,subnm,subcontent,limitno,limitend,edustart,eduend,regdate,classno,classnm,adno) values 
-(subject_seq.nextval,'java°úÁ¤','java°úÁ¤ÀÔ´Ï´Ù',20,'2019-08-07','2019-08-12','2019-10-10',sysdate,1,'java¹Ý',1);
-
-insert into USERS (userno,id,name,pw1,pw2,cp,email,sex,regdate,pwa,jpath,pwfno,subno,classno) values 
-(users_seq.nextval,'myid','±èµÎµÎ','1234','1234','010-4567-1234','qwe@naver.com',1,sysdate,'¸¶¿ì½º',1,1,1,1);
-
-insert into ATTEND (attno,state,attdate,userno) values (attend_seq.nextval,0,sysdate,1);
-
-insert into qna (qnano,qsub,qcontent,regdate,userno) values (qna_seq.nextval, 'Áú¹®1', 'ÀÌ°Ô ±Ã±ÝÇÕ´Ï´Ù', sysdate, 1);
-
-insert into assign (assno,assnm,asscontent,regdate,userno) values (assign_seq.nextval,'°úÁ¦1','°úÁ¦³»¿ë',sysdate,1);
-
-insert into score (scoreno,testno,testscore,userno) values (score_seq.nextval,1,80,1);
+insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'ê´€ë¦¬ìž','admin','1234','1234','01012345678','asd@naver.com',1,'a',2,1);
+commit;
+>>>>>>> refs/remotes/origin/injun0708
