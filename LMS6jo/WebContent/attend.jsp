@@ -6,8 +6,8 @@
 	<div id="leftMenu">
         <ul>
             <li><a class="active">마이페이지</a></li>
-            <li><a href="##">출결확인</a></li>
-            <li><a href="##">과제제출</a></li>
+            <li><a href="attend.jsp">출결확인</a></li>
+            <li><a href="assignment.jsp">과제제출</a></li>
             <li><a href="##">학습자료다운</a></li>
             <li><a href="##">성적확인</a></li>
             <li><a href="##">QnA</a></li>
