@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel= "stylesheet" type="text/css" href="css/main.css">
+    <link rel= "stylesheet" type="text/css" href="./../css/main.css">
 </head>
 <body>
 	<div id="container">
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div>
-            <img src="imgs/toplogo.PNG">
+            <img src="./../imgs/toplogo.PNG">
         </div>
         <div id="header">
             <ul class="menu">
