@@ -11,6 +11,7 @@
     <link rel= "stylesheet" type="text/css" href="<%=root %>/css/main.css">
     <link rel= "stylesheet" type="text/css" href="<%=root %>/css/teacher.css">
     <script src="<%=root %>/js/jquery-1.12.4.js"></script>
+
 </head>
 <body>
         <div id="topheader">
