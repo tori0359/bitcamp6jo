@@ -45,7 +45,7 @@
 <body>
 <%@ include file="./../common/header.jspf" %>
 		<div id="total">
-    <h1>회원가입</h1><br><br>    
+    <h1 class="title">회원가입</h1><br><br>    
     <h2 class="subtitle">이용약관</h2>
     <div>
         <textarea class="ta">  제 1 장 총칙
