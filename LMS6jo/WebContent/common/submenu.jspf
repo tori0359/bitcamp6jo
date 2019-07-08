@@ -5,9 +5,9 @@
 <div id="leftMenu">
         <ul>
            <li><a class="active">관리자 페이지</a></li>
-           <li><a href="<%=root%>/teacher/mainT.jsp">메인</a></li>
-           <li><a href="<%=root%>/teacher/attendT_list.jsp"">출결관리</a></li>
-           <li><a href="<%=root%>/teacher/subjectT_list.jsp">과제관리</a></li>
+           <li><a href="<%=root%>/teacher/main.lms?idx=1">메인</a></li>
+           <li><a href="<%=root%>/teacher/attend/list.lms?idx=1"">출결관리</a></li>
+           <li><a href="<%=root%>/teacher/subject/list.lms">과제관리</a></li>
            <li><a href="<%=root%>/teacher/lmT_list.jsp">학습자료관리</a></li>
            <li><a href="<%=root%>/teacher/scoreT_list.jsp">성적관리</a></li>
            <li><a href="<%=root%>/teacher/qnaQT_list.jsp">Q&A</a></li>

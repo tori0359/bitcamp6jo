@@ -10,10 +10,11 @@ public class AssignDto {
 	private String	content;	// 과제내용
 	private Date	regdate;	// 과제등록일자
 	private String	fileName;	// 파일명
-	private String	firlPath;	// 파일경로
+	private String	filePath;	// 파일경로
 	
 	//사용자
-	private UserDto user;		// 사용자번호(user.num)
+//	private UserDto user;		// 사용자번호(user.num)
+	private String uname;
 	
 	//생성자
 	public AssignDto() {
@@ -61,21 +62,22 @@ public class AssignDto {
 		this.fileName = fileName;
 	}
 
-	public String getFirlPath() {
-		return firlPath;
+	public String getFilePath() {
+		return filePath;
 	}
 
-	public void setFirlPath(String firlPath) {
-		this.firlPath = firlPath;
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 
-	public UserDto getUser() {
-		return user;
+	public String getUname() {
+		return uname;
 	}
 
-	public void setUser(UserDto user) {
-		this.user = user;
+	public void setUname(String uname) {
+		this.uname = uname;
 	}
+
 	
 	
 }
