@@ -1,15 +1,13 @@
 @charset "UTF-8";
 
-	/*subContent area start*/
+	/*subContent area */
 #subContent {width: 1315px;height: 400px;padding: 20px;margin-bottom: 10px;float: left;text-align: center;border: 1px solid #bcbcbc;background-color: lightgray;}
-	/*subContent area end*/
 
-	/*common area start*/
+	/*common area*/
 #subContent h1{font-size: 25px;text-align: center;margin:10px 550px;padding: 10px;color: #FFF;background-color: #007AAE;border-radius: 30px;}
 #subContent .th1{width: 10%;}
-	/*common are end*/
 
-/*btn area start*/
+/*btn area*/
 .mainT_btn{display: inline-block;padding: 2em 3em;border-radius: 0.35m;letter-spacing: 0.20em;text-decoration: none;font-weight: 400;font-size: 0.90em;
 	color: #FFF;
 	background-color: #8ebebc;
@@ -19,7 +17,6 @@
 }
 
 .mainT_btn:hover{background-color: #9ececc;}
-
 .mainT_btn2{
 	display: inline-block;
 	padding: 2em 3em;
@@ -86,7 +83,7 @@ input.regist{
 -->
 /*btn area end*/
 
-/*subject board area start*/
+/*subject board area*/
 .list_div{display:inline-block;width:900px;}
 
 #subContent table{width:100%;margin: 0px auto;}
@@ -96,26 +93,11 @@ input.regist{
 #subContent table.type11 th:nth-child(4){width: 10%;}
 #subContent table.type11 th:nth-child(5){width: 10%;}
 
-table.type11 {
-    border-collapse: separate;
-    border-spacing: 1px;
-    text-align: center;
-    line-height: 1.5;
-    margin: 20px 10px;
-}
-table.type11 th {
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    color: #fff;
-    background: lightblue ;
-}
-table.type11 td {
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: #eee;
-}
+.list_div table {border-collapse: separate;border-spacing: 1px;text-align: center;line-height: 1.5;margin: 20px 10px;}
+.list_div table th{padding: 10px;font-weight: bold;vertical-align: top;color: #fff;background: lightblue ;}
+.list_div table td{padding: 10px;vertical-align: top;border-bottom: 1px solid #ccc;background: #eee;}
+
+
 table.type11 td.updTd {
     padding: 10px;
     vertical-align: top;
@@ -124,104 +106,26 @@ table.type11 td.updTd {
 }
 table.type11 td p {text-align: left}
 #subjectName{float:left;}
-/*subject board area end*/
 
-/*lmT board area start*/
-#subContent table.type12 th:nth-child(1){
-	width: 5%;
-}
-#subContent table.type12 th:nth-child(2){
-	width: 25%;
-}
-#subContent table.type12 th:nth-child(3){
-	width: 25%;
-}
-#subContent table.type12 th:nth-child(4){
-	width: 10%;
-}
-#subContent table.type12 th:nth-child(5){
-	width: 10%;
-}
-#subContent table.type12 th:nth-child(6){
-	width: 10%;
-}
-#subContent table.type12 th:nth-child(7){
-	width: 10%;
-}
-#subContent table.type12 th:nth-child(8){
-	width: 5%;
-}
-#subContent table input{
-	width: 100%;
-	padding:0;
-}
-table{
-	border-collapse: collapse; 
-}
-table.type12 {
-    border-collapse: separate;
-    border-spacing: 1px;
-    text-align: center;
-    line-height: 1.5;
-    margin: 20px 10px;
-}
-table.type12 th {
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    color: #fff;
-    background: lightblue ;
-}
-table.type12 td {
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: #eee;
-}
-/*lmT board area end*/
+/*lmT board area */
+#subContent table.type12 th:nth-child(1){width: 5%;}
+#subContent table.type12 th:nth-child(2){width: 25%;}
+#subContent table.type12 th:nth-child(3){width: 25%;}
+#subContent table.type12 th:nth-child(4){width: 10%;}
+#subContent table.type12 th:nth-child(5){width: 10%;}
+#subContent table.type12 th:nth-child(6){width: 10%;}
+#subContent table.type12 th:nth-child(7){width: 10%;}
+#subContent table.type12 th:nth-child(8){width: 5%;}
 
-/*qna board area start*/
-#subContent table{
-	width:100%;
-	margin: 0px auto;
-}
-#subContent table.type13 th:nth-child(1){
-	width: 5%;
-}
-#subContent table.type13 th:nth-child(2){
-	width: 10%;
-}
-#subContent table.type13 th:nth-child(4){
-	width: 10%;
-}
-#subContent table.type13 th:nth-child(5){
-	width: 10%;
-}
-#subContent table.type13 th:nth-child(6){
-	width: 10%;
-}
-#subContent table.type13 th:nth-child(7){
-	width: 10%;
-}
+#subContent table input{width: 100%;padding:0;}
 
-table.type13 {
-    border-collapse: separate;
-    border-spacing: 1px;
-    text-align: center;
-    line-height: 1.5;
-    margin: 20px 10px;
-}
-table.type13 th {
-    padding: 10px;
-    font-weight: bold;
-    vertical-align: top;
-    color: #fff;
-    background: lightblue ;
-}
-table.type13 td {
-    padding: 10px;
-    vertical-align: top;
-    border-bottom: 1px solid #ccc;
-    background: #eee;
-}
-/*qna board area end*/
+table{border-collapse: collapse;}
+
+/*qna board area */
+#subContent table{width:100%;margin: 0px auto;}
+#subContent table.type13 th:nth-child(1){width: 5%;}
+#subContent table.type13 th:nth-child(2){width: 10%;}
+#subContent table.type13 th:nth-child(4){width: 10%;}
+#subContent table.type13 th:nth-child(5){width: 10%;}
+#subContent table.type13 th:nth-child(6){width: 10%;}
+#subContent table.type13 th:nth-child(7){width: 10%;}
