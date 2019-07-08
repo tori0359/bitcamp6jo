@@ -34,6 +34,7 @@ a{text-decoration: none}
 #header .menu>li>ul>li:hover>a{color: #1B499B;}
 
 
+#content{float:left;}
 
 #leftMenu{width: 200px; margin-right:10px; margin-bottom: 10px; float:left;}
 #leftMenu ul{list-style-type: none;margin: 0;padding: 0;height: 400px;background-color: #42597B;}
