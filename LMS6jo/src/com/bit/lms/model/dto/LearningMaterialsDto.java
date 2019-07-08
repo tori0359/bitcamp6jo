@@ -13,6 +13,7 @@ public class LearningMaterialsDto {
 	
 	//관리자 객체
 	private AdminDto admin;		//관리자번호(admin.num)
+	private String aname;		//강사이름
 	
 	//생성자
 	public LearningMaterialsDto() {
@@ -67,6 +68,15 @@ public class LearningMaterialsDto {
 	public void setAdmin(AdminDto admin) {
 		this.admin = admin;
 	}
+
+	public String getAname() {
+		return aname;
+	}
+
+	public void setAname(String aname) {
+		this.aname = aname;
+	}
+	
 	
 	
 	
