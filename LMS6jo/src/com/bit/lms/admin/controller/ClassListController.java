@@ -17,7 +17,6 @@ public class ClassListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		System.out.println("doget");
 		ClassDao dao=new ClassDao();
 		req.setAttribute("list", dao.noClassList());
 		
