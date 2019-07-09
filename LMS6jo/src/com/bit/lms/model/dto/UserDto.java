@@ -10,15 +10,24 @@ public class UserDto {
 	private String 		name;		//사용자이름 
 	private String 		pw1;		//패스워드
 	private String 		pw2;		//패스워드확인
-	private String  	hp;			//핸드폰번호
+	private String  	cp;			//핸드폰번호
 	private String 		email;		//이메일
-	private String 		sex;		//성별
+	private int 		sex;		//성별
 	private int			subject;	//희망강좌(1:Java반, 2:DB반, 3:Web반)
 	private Date		regdate;	//등록일자
 	private int			state;		//상태값(0:가입, 1:회원탈퇴대기)
 	private String		pwA;		//비밀번호답
 	private int			joinPath;	//가입경로(1:인터넷광고,2:고용센터추천,3:지인추천)
+	private int 		pwfno;		//비번찾기 질문
 	
+	public int getPwfno() {
+		return pwfno;
+	}
+
+	public void setPwfno(int pwfno) {
+		this.pwfno = pwfno;
+	}
+
 	//강좌
 	private SubjectDto	sub;		//강좌번호(sub.num)
 	
@@ -71,12 +80,12 @@ public class UserDto {
 		this.pw2 = pw2;
 	}
 
-	public String getHp() {
-		return hp;
+	public String getCp() {
+		return cp;
 	}
 
-	public void setHp(String hp) {
-		this.hp = hp;
+	public void setCp(String cp) {
+		this.cp = cp;
 	}
 
 	public String getEmail() {
@@ -87,11 +96,11 @@ public class UserDto {
 		this.email = email;
 	}
 
-	public String getSex() {
+	public int getSex() {
 		return sex;
 	}
 
-	public void setSex(String sex) {
+	public void setSex(int sex) {
 		this.sex = sex;
 	}
 

@@ -137,7 +137,7 @@ CREATE TABLE users
 	pwa                   VARCHAR2(20)  NOT NULL ,
 	jpath                 NUMBER  NOT NULL ,
 	pwfno                 NUMBER  NOT NULL ,
-	subno                 NUMBER  NOT NULL ,
+	subno                 NUMBER NOT NULL,
 	classno               NUMBER  NULL ,
 CONSTRAINT  XPKusers PRIMARY KEY (userno),
 CONSTRAINT  R_4 FOREIGN KEY (pwfno) REFERENCES pwfind(pwfno),
@@ -262,3 +262,5 @@ insert into qna (qnano,qsub,qcontent,regdate,userno) values (qna_seq.nextval, '�
 insert into assign (assno,assnm,asscontent,regdate,userno) values (assign_seq.nextval,'과제1','과제내용',sysdate,1);
 
 insert into score (scoreno,testno,testscore,userno) values (score_seq.nextval,1,80,1);
+
+select * from users;
