@@ -3,6 +3,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="./../../common/header.jspf" %>
+
 	<div id="mainA">
 		<div id="leftMenu">
 	        <ul>
@@ -14,29 +15,51 @@
 	        </ul>
 	    </div>
         <div id="bigclsAdiv">
+            <div class="clssub"></div>
+            <div class="clssub">희망강좌</div>
+            <div class="clssub">이름</div>
+            <div class="clsmain">
+                <form method="post">
+            	<%
+            	String whatsubb=String.valueOf(request.getAttribute("whatsubb"));
+            	System.out.println(request.getAttribute("whatsubb"));
+            	System.out.println(whatsubb);
+            		if(Integer.parseInt(whatsubb)==1 || request.getAttribute("whatsubb")==null){
+            			session.setAttribute("whatsub", 1);
+            		}else if(Integer.parseInt(whatsubb)==2){
+            			session.setAttribute("whatsub", 2);
+            		}
+            		ArrayList<UserDto> list= (ArrayList<UserDto>)request.getAttribute("list");
+            		for(UserDto udt:list){
+            	%>
+                    <div>
+                        <input type="checkbox" id="c1" name="c1" value="<%=session.getAttribute("whatsub")%>"/>
+                        <input type="hidden" id="c1no" name="c1no" value="<%=udt.getNum()%>"/>
+                        <label for="c1"><%=udt.getSubject() %></label>
+                        <label for="c1"><%=udt.getName() %></label>
+                    </div>
+                <%} %>
+                    <div><input type="submit" value="GO"/></div>
+                </form>
+            </div>
             <div>
                 <form>
-                    <select>
-                        <option value="java">java반</option>
-                        <option value="web">web반</option>
+                    <select name="ban">
+                        <option value="1">java반</option>
+                        <option value="2">web반</option>
                     </select>
                     <input type="submit" value="검색"/>
                 </form>
             </div>
-            <div class="clssub"></div>
-            <div class="clssub">희망강좌</div>
-            <div class="clssub">이름</div>
-            <div class="clssub">나이</div>
-            <div id="clsmain">
-                <form action="#" method="post">
-            	<% ArrayList<UserDto> list= (ArrayList<UserDto>)request.getAttribute("list");
-            		for(UserDto udt:list){
+            <div class="clsmain">
+                <form method="post">
+            	<% ArrayList<UserDto> list2= (ArrayList<UserDto>)request.getAttribute("list2");
+            		for(UserDto udt:list2){
             	%>
                     <div>
-                        <input type="checkbox" id="c1" name="cc" value=""/>
-                        <label for="c1"><%=udt.getNum() %></label>
-                        <label for="c1"><%=udt.getName() %></label>
-                        <label for="c1"><%=udt.getSubject() %></label>
+                        <input type="checkbox" id="c2" name="c2" value="<%=udt.getNum()%>"/>
+                        <label for="c2"><%=udt.getSubject() %></label>
+                        <label for="c2"><%=udt.getName() %></label>
                     </div>
                 <%} %>
                     <div><input type="submit" value="GO"/></div>
