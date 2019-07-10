@@ -97,6 +97,25 @@ public class AssignDao {
 		return bean;
 	}
 	
+	//파일명가져오기
+	public String getFileName(int num){
+		AssignDto bean = new AssignDto();
+		String sql = "SELECT A.FILENM FROM ASSIGN A WHERE A.ASSNO=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if(rs.next()){
+				bean.setFileName(rs.getString("filenm"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return bean.getFileName();
+	}
+	
 	//과제등록 - 수강생
 	public int assignInsert(){
 		
