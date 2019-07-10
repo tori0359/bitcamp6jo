@@ -5,7 +5,8 @@
 	<div id="content">
 		<%@include file="./../../common/submenu.jspf" %>
 		<div id="subContent">
-			<table class="type11">
+		<div class="list_div">
+			<table class="type12">
 				<thead>
 					<tr>
 						<th>번호</th>
@@ -42,5 +43,6 @@
 				</tbody>
 			</table>
 		</div>
+    </div>
     </div>
 <%@include file="./../../common/footer.jspf" %>

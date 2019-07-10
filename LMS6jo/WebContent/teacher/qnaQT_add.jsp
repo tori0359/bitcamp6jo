@@ -5,7 +5,7 @@
 		<%@include file="./../common/submenu.jspf" %>
 		<div id="subContent">
 			<h1>답변등록</h1>
-			<table class="type11">
+			<table class="type12">
 				<tr>
 					<th class="th1">작성자</th>
 					<td style="text-align: left">황인준</td>
@@ -24,8 +24,8 @@
 				</tr>
 			</table>
 			<center>
-				<button class="upd_btn">답변등록</button>
-				<button class="del_btn">답변취소</button>
+				<button class="list_btn">답변등록</button>
+				<button class="list_btn">답변취소</button>
 			</center>		
 		</div>
     </div>

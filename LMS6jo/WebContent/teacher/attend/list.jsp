@@ -10,6 +10,7 @@
       } );
     </script>
 	<div id="content">
+	<div class="list_div">
 		<%@include file="./../../common/submenu.jspf" %>
 		<div id="subContent">
 			<h2>출결관리</h2>

@@ -22,7 +22,8 @@
 	<div id="content">
 		<%@include file="./../../common/submenu.jspf" %>
 		<div id="subContent">
-			<table class="type11">
+		<div class="list_div">
+			<table class="type12">
 			<%
 			AssignDto bean = (AssignDto)request.getAttribute("assignDetail");
 			%>

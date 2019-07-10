@@ -6,7 +6,8 @@
 	<div id="content">
 		<%@include file="./../../common/submenu.jspf" %>
 		<div id="subContent">
-			<table class="type11">
+		<div class="list_div">
+			<table class="type12">
 				<thead>
 					<tr>
 						<th>번호</th>
@@ -42,7 +43,7 @@
 				%>
 				</tbody>
 			</table>
-			<button class="upload_btn"><a href="<%=root%>/teacher/lmT_add.jsp">업로드</a></button>
+			<a class="list_btn" href="<%=root%>/teacher/lmT_add.jsp">업로드</a>
 		</div>
     </div>
 <%@include file="./../../common/footer.jspf" %>
