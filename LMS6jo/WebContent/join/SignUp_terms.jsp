@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel= "stylesheet" type="text/css" href="./../css/SignUp_terms.css">
+<link rel= "stylesheet" type="text/css" href="./../css/SignUp.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <script type="text/javascript" src="js/jquery-1.12.4.js"></script>

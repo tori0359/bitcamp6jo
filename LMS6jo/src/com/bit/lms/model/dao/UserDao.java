@@ -58,7 +58,7 @@ public class UserDao {
 	public int confirmId(String id){
 		String sql="select id from users where id=?";
 		int result=0;
-		
+
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, id);
