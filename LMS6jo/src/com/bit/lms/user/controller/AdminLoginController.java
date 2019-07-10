@@ -11,8 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import com.bit.lms.model.dao.UserDao;
 
-@WebServlet("/login/login.lms")
-public class LoginController extends HttpServlet{
+@WebServlet("/login/adminlogin.lms")
+public class AdminLoginController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
