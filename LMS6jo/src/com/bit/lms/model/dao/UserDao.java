@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.bit.lms.db.conn.LmsOracle;
+import com.bit.lms.model.dto.AdminDto;
 import com.bit.lms.model.dto.UserDto;
 
 //사용자
@@ -22,9 +23,10 @@ public class UserDao {
 		return this.conn;
 	}
 	
-	//회원가입
+	//수강생 회원가입
 	public int joinUs(UserDto user){
-		String sql="insert into users (userno,id,name,pw1,pw2,cp,email,sex,regdate,pwa,jpath,pwfno,subno) values (users_seq.nextval,?,?,?,?,?,?,?,sysdate,?,?,?,?)";
+		String sql="insert into users (userno,id,name,pw1,pw2,cp,email,sex,regdate,pwa,jpath,pwfno,subno) "
+				+ "values (users_seq.nextval,?,?,?,?,?,?,?,sysdate,?,?,?,?)";
 		int result=0;
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -41,7 +43,6 @@ public class UserDao {
 			pstmt.setInt(11, user.getSubject());//강좌선택
 			result=pstmt.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally{
 			try {
@@ -51,6 +52,38 @@ public class UserDao {
 				e.printStackTrace();
 			}	
 		}
+		return result;
+	}
+	
+	//강사 회원가입
+	public int joinAdmin(AdminDto admin){
+		int result = 0;
+		String sql="insert into admins (adno,id,name,pw1,pw2,cp,email,sex,confirmno,pwa,pwfno,deptno) values(admins_seq.nextval,?,?,?,?,?,?,?,?,?,?,1)";
+		
+		try {			
+			pstmt=conn.prepareStatement(sql);		
+			pstmt.setString(1, admin.getId());				//강사아이디
+			pstmt.setString(2, admin.getName());			//강사명
+			pstmt.setString(3, admin.getPw1());				//비밀번호1
+			pstmt.setString(4, admin.getPw2());				//비밀번호2
+			pstmt.setString(5, admin.getHp());				//핸드폰번호
+			pstmt.setString(6, admin.getEmail());			//이메일
+			pstmt.setInt(7, admin.getSex());				//성별
+			pstmt.setString(8, admin.getConfirmNum());		//확인번호
+			pstmt.setString(9, admin.getPwA());				//비밀번호찾기 답변
+			pstmt.setInt(10, admin.getPwfno());				//비밀번호찾기 질문번호
+			result=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstmt!=null){pstmt.close();}
+				if(conn!=null){conn.close();}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}
+		
 		return result;
 	}
 	

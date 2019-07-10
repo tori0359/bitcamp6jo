@@ -263,4 +263,7 @@ insert into assign (assno,assnm,asscontent,regdate,userno) values (assign_seq.ne
 
 insert into score (scoreno,testno,testscore,userno) values (score_seq.nextval,1,80,1);
 
-select * from users;
+select * from admins;
+
+insert into admins (adno,id,name,pw1,pw2,cp,email,sex,confirmno,pwa,pwfno,deptno) values (admins_seq.nextval,'admin4','관리자','1234','1234','010-1234-1234','admin1234@naver.com',1,'qwer1234','답변1','1',1);
+rollback

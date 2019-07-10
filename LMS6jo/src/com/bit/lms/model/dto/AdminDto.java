@@ -10,7 +10,7 @@ public class AdminDto {
 	private String 	pw2;		//패스워드확인
 	private String  hp;			//핸드폰번호
 	private String 	email;		//이메일
-	private String 	sex;		//성별
+	private int 	sex;		//성별
 	private int		state;		//상태값(0:가입, 1:회원탈퇴대기)
 	private String	confirmNum;	//확인번호
 	private String	pwA;		//비밀번호답
@@ -18,7 +18,8 @@ public class AdminDto {
 	//직급(관리자부서)
 	private DeptDto	dept;		//직급번호(dept.num)		
 	//비밀번호찾기
-	private PwfDto	pwf;		//비밀번호찾기번호(pwf.num)
+	//private PwfDto	pwf;	//비밀번호찾기번호(pwf.num)
+	private int		pwfno;
 	
 	//생성자
 	public AdminDto() {
@@ -28,6 +29,14 @@ public class AdminDto {
 	//getter,setter
 	public int getNum() {
 		return num;
+	}
+
+	public int getPwfno() {
+		return pwfno;
+	}
+
+	public void setPwfno(int pwfno) {
+		this.pwfno = pwfno;
 	}
 
 	public void setNum(int num) {
@@ -82,11 +91,11 @@ public class AdminDto {
 		this.email = email;
 	}
 
-	public String getSex() {
+	public int getSex() {
 		return sex;
 	}
 
-	public void setSex(String sex) {
+	public void setSex(int sex) {
 		this.sex = sex;
 	}
 

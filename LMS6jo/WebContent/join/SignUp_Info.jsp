@@ -164,7 +164,7 @@
                 </tr>
                 <tr>
                     <td><h5>확인코드</h5></td>
-                    <td><input type="text"style="width: 200px; height: 20px;" placeholder="강사만 입력해주세요."/></td>
+                    <td><input type="text"style="width: 200px; height: 20px;" name="confirmCode" placeholder="강사만 입력해주세요."/></td>
                 </tr>
                 <tr><td style="height: 30px"></td></tr>
                 <tr>
