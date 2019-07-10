@@ -41,8 +41,9 @@ public class AssignDao {
 	//과제목록 - 강사
 	public ArrayList<AssignDto> assignList(){
 		ArrayList<AssignDto> list = new ArrayList<AssignDto>();
+		//학생은 반번호가 있고 강사는 강좌번호와 자신의 반번호와 자신의 강좌번호를 갖는다. (현재는 임시 테스트용 쿼리) 
 		String sql = "select A.assno as assno, A.assnm as assnm, A.asscontent as asscontent, "
-				+ "A.regdate as regdate, A.filenm as filenm, A.filepath as filepath, B.name as uname from assign A, users B where A.userno=B.userno and B.classno=1";
+				+ "A.regdate as regdate, A.filenm as filenm, A.filepath as filepath, B.name as uname from assign A, users B where A.userno=B.userno";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
