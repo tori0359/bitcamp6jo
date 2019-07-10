@@ -38,22 +38,42 @@
             </div>
              -->
 
-            <div class="login">
             <%
-            	if(session.getAttribute("id")==null){
+            	if(session.getAttribute("userid")==null && session.getAttribute("adminid")==null){
             %>
+            <div class="login">
             	<a href="<%=root%>/login/login.jsp">로그인</a>
-            	<%
-            	}else{
-            	%>
-            	<a href="">로그아웃</a>
-            	<%
-            	}
-            	%>
             </div>
             <div class="sign">
             	<a href="<%=root%>/join/SignUp_terms.lms">회원가입</a>
             </div>
+            	<%
+            	}else{
+            	%>
+            	<div class="signout">
+            	<a href="<%=root%>/login/logout.jsp">로그아웃</a>
+            	</div>
+            	<div class="loginClear">
+            	<a href=""><%=session.getAttribute("name") %>님 환영합니다</a>
+            	</div>
+            	<%if(session.getAttribute("deptno")!=null){ %>
+            	<%System.out.println(session.getAttribute("deptno")+"jsp"); %>
+            	<%if((session.getAttribute("deptno")).equals("1")){ %>
+           		<div id="LMSGO">
+            	<a href="1">LMS</a>
+            	</div>
+            	<%}else if((session.getAttribute("deptno")).equals("2")){ %>
+				<div id="LMSGO">
+            	<a href="2">LMS</a>
+            	</div>
+            	<%}else if((session.getAttribute("deptno")).equals("3")){ %>
+            	<div id="LMSGO">
+            	<a href="3">LMS</a>
+            	</div>
+            	<%}
+            	}
+            	}
+            	%>	
 
         </div>
         <div>

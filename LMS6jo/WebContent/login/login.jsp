@@ -20,6 +20,9 @@
 </script>
 </head>
 <body>
+
+	
+
 <%@ include file="./../common/header.jspf" %>
    <div id="login-container">
    <form action="<%=root %>/login/login.lms" method="get" name="form">
@@ -57,6 +60,21 @@
         </table>
         </div>
         <br><br><br><br>
-<%@ include file="./../common/footer.jspf" %>  
+<%@ include file="./../common/footer.jspf" %> 
+<%
+	String param=request.getParameter("param");
+	System.out.println(param);
+	if(param!=null){
+		if("fail".equals(param)){	
+	
+%> 
+	<script>
+					alert("아이디와 비밀번호를 확인하시기 바랍니다");
+	</script>
+	<%}
+	}
+	%>
+
+
 </body>
 </html>

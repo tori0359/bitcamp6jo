@@ -26,17 +26,17 @@ public class LoginController extends HttpServlet{
 		
 		UserDao dao=new UserDao();
 		int result=dao.login(id, pw);
+		String name=dao.loginname(id);
 		
-		System.out.println(result);
 		
 		HttpSession session=req.getSession();
 		
 		if(result==1){
-			session.setAttribute("id", id);
-			System.out.println("result=1");
+			session.setAttribute("userid", id);
+			session.setAttribute("name", name);
 			resp.sendRedirect("/LMS6jo/index.jsp?param=success");
-		}else{
-			resp.sendRedirect("");
+		}else if(result==0){
+			System.out.println(result);
 			resp.sendRedirect("/LMS6jo/login/login.jsp?param=fail");
 		}
 		

@@ -25,19 +25,21 @@ public class AdminLoginController extends HttpServlet{
 		String pw=req.getParameter("pw");
 		
 		UserDao dao=new UserDao();
-		int result=dao.login(id, pw);
+		int result=dao.adminlogin(id, pw);
+		String name=dao.loginAdminname(id);
+		String deptno=dao.deptNo(id)+"";
 		
-		System.out.println(result);
 		
 		HttpSession session=req.getSession();
 		
 		if(result==1){
-			session.setAttribute("id", id);
-			System.out.println("result=1");
+			session.setAttribute("adminid", id);
+			session.setAttribute("name", name);
+			session.setAttribute("deptno", deptno);
 			resp.sendRedirect("/LMS6jo/index.jsp?param=success");
-		}else{
-			resp.sendRedirect("");
-			resp.sendRedirect("/LMS6jo/login/login.jsp?param=fail");
+			System.out.println(deptno);
+		}else if(result==0){
+			resp.sendRedirect("/LMS6jo/login/adminlogin.jsp?param=fail");
 		}
 		
 	}
