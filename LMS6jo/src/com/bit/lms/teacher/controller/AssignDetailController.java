@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bit.lms.model.dao.AssignDao;
+import com.bit.lms.model.dto.AssignDto;
 
 @WebServlet("/teacher/subject/detail.lms")
 public class AssignDetailController extends HttpServlet{
 
+	//상세목록
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String idx = req.getParameter("idx");
@@ -22,8 +24,9 @@ public class AssignDetailController extends HttpServlet{
 		AssignDao dao = new AssignDao();
 		req.setAttribute("assignDetail", dao.assignDetail(num));
 		
+		req.setAttribute("fileName", dao.getFileName(num));
+		
 		RequestDispatcher rd = req.getRequestDispatcher("/teacher/subject/detail.jsp");
 		rd.forward(req, resp);
 	}
-	
 }

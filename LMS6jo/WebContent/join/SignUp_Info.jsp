@@ -86,7 +86,7 @@
 <body>
 <%@ include file="./../common/header.jspf" %>
 	<div class="container" style="margin-left: 570px;">
-        <form method="get" action="/LMS6jo/join/signupInfo.lms" name="form">
+        <form method="get" action="<%=root %>/join/signupInfo.lms" name="form">
             <table id="info-table"> 
             <tbody>
                 <tr>
@@ -174,11 +174,11 @@
                 
             </tbody>
             </table>
-        <script>
-        	function checkOk(){
-        		document.form.submit();
-        	}
-        </script>
+	        <script>
+	        	function checkOk(){
+	        		document.form.submit();
+	        	}
+	        </script>
         </form>
         </div>
 <%@ include file="./../common/footer.jspf" %>  
