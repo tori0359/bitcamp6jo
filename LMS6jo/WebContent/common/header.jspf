@@ -39,7 +39,17 @@
              -->
 
             <div class="login">
-            	<a href="">로그인</a>
+            <%
+            	if(session.getAttribute("id")==null){
+            %>
+            	<a href="<%=root%>/login/login.jsp">로그인</a>
+            	<%
+            	}else{
+            	%>
+            	<a href="">로그아웃</a>
+            	<%
+            	}
+            	%>
             </div>
             <div class="sign">
             	<a href="<%=root%>/join/SignUp_terms.lms">회원가입</a>

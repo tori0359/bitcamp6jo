@@ -22,11 +22,11 @@
 <body>
 <%@ include file="./../common/header.jspf" %>
    <div id="login-container">
-   <form action="<%=root %>/login/login.lms" method="get" name="form">
+   <form action="<%=root %>/login/adminlogin.lms" method="get" name="form">
     <table id="toptable">
        <tbody>
         <tr>
-            <td colspan="2"><h2>로그인</h2></td>
+            <td colspan="2"><h2>관리자 로그인</h2></td>
         </tr>
         <tr>
             <td colspan="2"><input  id="loginID" name="id" type="text" placeholder="아 이 디"></td>
@@ -37,7 +37,8 @@
         <tr><td colspan="2"><input id="loginbtn" type="button" value="로그인" onclick="confirmLogin()"></td>
         </tr>
         <tr>
-            <td colspan="2" style="border-bottom: 2px solid darkgray"><label for=""><a class="atag" href="<%=root%>/login/adminlogin.jsp">관리자 로그인</a></label></td>
+        	
+            <td colspan="2" style="border-bottom: 2px solid darkgray"><label for=""><a class="atag" href="<%=root%>/login/login.jsp">학생 로그인</a></label></td>
         </tr>
         </tbody>
     </table>

@@ -85,10 +85,67 @@ public class UserDao {
 		return result;
 	}
 	
-	//로그인(로그아웃 session처리)
-	public int login(String id, String pwd){
+	//학생 로그인(로그아웃 session처리)
+	public int login(String id, String pw){
+		String sql="select * from users where id=? and pw1=?";
+		int result=0;
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				result=1;
+			}else{
+				result=0;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
-		return 0;
+		return result;
+	}
+	//관리자 로그인(로그아웃 session처리)
+	public int adminlogin(String id, String pw){
+		String sql="select * from admins where id=? and pw1=?";
+		int result=0;
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				result=1;
+			}else{
+				result=0;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
 	}
 	
 	//비밀번호찾기 - id
