@@ -3,6 +3,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="./../common/header.jspf" %>
+    <script>
+      $( document ).ready( function() {
+        $( '.check_all' ).click( function() {
+          $( '.attend_cb' ).prop( 'checked', this.checked );
+        } );
+      } );
+     </script>
 	<div id="content">
 	<div id="leftMenu">
         <ul>
@@ -19,6 +26,7 @@
 			<table class="type12">
 				<thead>
 					<tr>
+						<th><input type="checkbox" name="all" class="check_all"></th>
 						<th>강좌번호</th>
 						<th>강좌명</th>
 						<th>강사명</th>
@@ -34,8 +42,9 @@
 					if(list != null){
 						for(SubjectDto bean : list){
 				%>
+						<td><input type="checkbox" name="sub_cb<%=bean.getNum() %>" class="attend_cb"></td>
 						<td><%=bean.getNum() %></td>
-						<td><%=bean.getName() %></td>
+						<td><a href="<%=root%>/admin/subA_detail.jsp?idx=<%=bean.getNum() %>"><%=bean.getName() %></a></td>
 						<td><!-- <%=bean.getAdmin() %> --></td>
 						<td><%=bean.getLimitNum() %></td>
 						<td><%=bean.getLimitEnd()%> </td>

@@ -74,5 +74,32 @@ public class SubjectDao {
 	public void subjectDelete(int num) {
 		
 	}
-	//강좌
+	//강좌 상세
+	public SubjectDto subjectDetail(int num) throws SQLException{
+		String sql="select a.subno as num, a.subnm as name, a.limitno as limitNum, a.eduend as limitEnd, a.subcontent as content from subject a, admins b where a.adno=b.adno and b.deptno=?";
+		SubjectDto bean = new SubjectDto();
+		
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		try{
+			conn=LmsOracle.getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				bean.setNum(rs.getInt("num"));
+				bean.setName(rs.getString("name"));
+				bean.setContent(rs.getString("content"));
+				bean.setLimitEnd(rs.getString("limitEnd"));
+				bean.setLimitNum(rs.getInt("limitNum"));
+			}
+		}finally{
+			if(rs!=null)rs.close();
+			if(pstmt!=null)pstmt.close();
+			if(conn!=null)conn.close();
+		}
+		
+		return bean;
+	}
 }
