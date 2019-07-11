@@ -18,7 +18,7 @@
            <td>
                <h3 style="width: 70px;">아이디 :</h3>
            </td>
-            <td style="width: 280px;"><h3 style="color: #3498DB">abc123</h3></td>
+            <td style="width: 280px;"><h3 style="color: #3498DB"><%=request.getParameter("param") %></h3></td>
        </tr>
         <tr>
             <td colspan="2" style="height: 60px;"><input  id="loginID"  type="text" placeholder="새 비밀번호"></td>
