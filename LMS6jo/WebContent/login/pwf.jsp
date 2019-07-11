@@ -69,5 +69,17 @@
         </div>
         <br><br><br><br>
 <%@ include file="./../common/footer.jspf" %>  
+<%
+	String param=request.getParameter("param");
+	if(param!=null){
+		if("fail".equals(param)){	
+	
+%> 
+	<script>
+					alert("입력하신 정보가 정확하지 않습니다. \n다시 확인 바랍니다.");
+	</script>
+	<%}
+	}
+	%>
 </body>
 </html>

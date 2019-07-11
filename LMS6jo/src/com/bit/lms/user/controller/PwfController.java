@@ -32,9 +32,8 @@ public class PwfController extends HttpServlet{
 		
 		if(result==1){
 			resp.sendRedirect("/LMS6jo/login/pwRe.jsp?param="+id);
+		}else{
+			resp.sendRedirect("/LMS6jo/login/pwf.jsp?param=fail");
 		}
-		
-		
-		System.out.println("동작"); 
 	}
 }

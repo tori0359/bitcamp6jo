@@ -268,3 +268,4 @@ select * from users;
 
 insert into admins (adno,id,name,pw1,pw2,cp,email,sex,confirmno,pwa,pwfno,deptno) values (admins_seq.nextval,'admin4','관리자','1234','1234','010-1234-1234','admin1234@naver.com',1,'qwer1234','답변1','1',1);
 rollback
+
