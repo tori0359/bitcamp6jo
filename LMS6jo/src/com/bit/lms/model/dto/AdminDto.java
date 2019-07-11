@@ -14,6 +14,15 @@ public class AdminDto {
 	private int		state;		//상태값(0:가입, 1:회원탈퇴대기)
 	private String	confirmNum;	//확인번호
 	private String	pwA;		//비밀번호답
+	private int 	deptno;			//부서번호(1:강사 2:영업 3:행정)
+	
+	public int getDeptno() {
+		return deptno;
+	}
+
+	public void setDeptno(int deptno) {
+		this.deptno = deptno;
+	}
 
 	//직급(관리자부서)
 	private DeptDto	dept;		//직급번호(dept.num)		

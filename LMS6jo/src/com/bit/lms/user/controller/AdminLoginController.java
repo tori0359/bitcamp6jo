@@ -11,8 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import com.bit.lms.model.dao.UserDao;
 
-@WebServlet("/login/login.lms")
-public class LoginController extends HttpServlet{
+@WebServlet("/login/adminlogin.lms")
+public class AdminLoginController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,19 +25,21 @@ public class LoginController extends HttpServlet{
 		String pw=req.getParameter("pw");
 		
 		UserDao dao=new UserDao();
-		int result=dao.login(id, pw);
-		String name=dao.loginname(id);
+		int result=dao.adminlogin(id, pw);
+		String name=dao.loginAdminname(id);
+		String deptno=dao.deptNo(id)+"";
 		
 		
 		HttpSession session=req.getSession();
 		
 		if(result==1){
-			session.setAttribute("userid", id);
+			session.setAttribute("adminid", id);
 			session.setAttribute("name", name);
+			session.setAttribute("deptno", deptno);
 			resp.sendRedirect("/LMS6jo/index.jsp?param=success");
+			System.out.println(deptno);
 		}else if(result==0){
-			System.out.println(result);
-			resp.sendRedirect("/LMS6jo/login/login.jsp?param=fail");
+			resp.sendRedirect("/LMS6jo/login/adminlogin.jsp?param=fail");
 		}
 		
 	}

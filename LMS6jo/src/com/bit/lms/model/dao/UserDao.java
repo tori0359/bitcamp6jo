@@ -118,11 +118,154 @@ public class UserDao {
 		return result;
 	}
 	
-	//로그인(로그아웃 session처리)
-	public int login(String id, String pwd){
+	//학생 로그인(로그아웃 session처리)
+	public int login(String id, String pw){
+		String sql="select * from users where id=? and pw1=?";
+		int result=0;
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				result=1;
+			}else{
+				result=0;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				//if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
-		return 0;
+		return result;
 	}
+	//user 이름받아옴
+	public String loginname(String id){
+		String sql="select name from users where id=?";
+		String result="";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				result=rs.getString("name");
+			}else{
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
+	
+	
+	//관리자 로그인(로그아웃 session처리)
+	public int adminlogin(String id, String pw){
+		String sql="select deptno from admins where id=? and pw1=?";
+		int result=0;
+
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setString(2, pw);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				result=1;
+			}else{
+				result=0;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				//if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
+	//admin 이름받아옴
+		public String loginAdminname(String id){
+			String sql="select name from admins where id=?";
+			String result="";
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, id);
+				rs=pstmt.executeQuery();
+				if(rs.next()){
+					result=rs.getString("name");
+				}else{
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally{
+				try {
+					if(rs!=null)rs.close();
+					if(pstmt!=null)pstmt.close();
+					//if(conn!=null)conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
+			return result;
+		}
+		//deptno 받아옴
+				public int deptNo(String id){
+					String sql="select deptno from admins where id=?";
+					int result=0;
+					try {
+						pstmt=conn.prepareStatement(sql);
+						pstmt.setString(1, id);
+						rs=pstmt.executeQuery();
+						if(rs.next()){
+							result=rs.getInt("deptno");
+						}else{
+						}
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}finally{
+						try {
+							if(rs!=null)rs.close();
+							if(pstmt!=null)pstmt.close();
+							if(conn!=null)conn.close();
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+					
+					return result;
+				}
 	
 	//비밀번호찾기 - id
 	public String findPw(String id, int pwq, String pwa){
