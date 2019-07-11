@@ -4,8 +4,9 @@
 	<div id="content">
 		<%@include file="./../common/submenu.jspf" %>
 		<div id="subContent">
+		<div class="list_div">
 			<h1>학습자료 등록</h1>
-			<table class="type11">
+			<table class="type12">
 				<tr>
 					<th>제목</th>
 					<td style="text-align: left;">비트캠프의 비밀</td>
@@ -18,7 +19,7 @@
 				</tr>
 			</table>
 			<center>
-				<input type="button" class="regist" value="등록"/>
+				<input type="button" class="list_btn" value="등록"/>
 			</center>
 		</div>
     </div>

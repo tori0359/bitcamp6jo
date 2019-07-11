@@ -4,6 +4,7 @@
 	<div id="content">
 		<%@include file="./../common/submenu.jspf" %>
 		<div id="subContent">
+		<div class="list_div">
 			<table class="type13">
 				<thead>
 					<tr>
@@ -28,6 +29,7 @@
 					</tr>
 				</tbody>
 			</table>
+		</div>
 		</div>
     </div>
 <%@include file="./../common/footer.jspf" %>

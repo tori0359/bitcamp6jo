@@ -24,6 +24,7 @@ public class AssignDetailController extends HttpServlet{
 		AssignDao dao = new AssignDao();
 		req.setAttribute("assignDetail", dao.assignDetail(num));
 		
+	
 		req.setAttribute("fileName", dao.getFileName(num));
 		
 		RequestDispatcher rd = req.getRequestDispatcher("/teacher/subject/detail.jsp");

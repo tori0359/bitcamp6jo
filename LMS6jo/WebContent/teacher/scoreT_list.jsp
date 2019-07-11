@@ -35,7 +35,8 @@
 			} 
 		</script>
 		<div id="subContent">
-			<table class="type12">
+		<div class="list_div">
+			<table class="type13">
 				<thead>
 					<tr>
 						<th>번호</th>
