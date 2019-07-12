@@ -1,6 +1,14 @@
 package com.bit.lms.model.dao;
 
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.bit.lms.db.conn.LmsOracle;
+import com.bit.lms.model.dto.SubjectDto;
 
 public class SubjectDao {
 /*
@@ -15,10 +23,49 @@ public class SubjectDao {
 	private int			classNum;		// 반번호
 	private String		className;		// 반명
  */
+	private Connection 			conn;
+	private PreparedStatement 	pstmt;
+	private ResultSet			rs;
+	
+	public SubjectDao() {
+		conn = LmsOracle.getConnection();
+	}
+	
+	public Connection getConnection(){
+		return this.conn;
+	}
 	
 	//강좌목록
-	public void subjectList(){
-		
+	public ArrayList<SubjectDto> subjectList(){
+		ArrayList<SubjectDto> list=new ArrayList<SubjectDto>();
+		String sql = "select a.subno as num, a.subnm as subname, a.limitno as limitNum, a.limitEnd as limitEnd, b.name "
+				+ "from subject a, admins b where a.adno=b.adno and b.deptno=1";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				SubjectDto bean = new SubjectDto();
+				bean.setNum(rs.getInt("num"));
+				bean.setName(rs.getString("subname"));
+				bean.setAdminName(rs.getString("name"));
+				bean.setLimitNum(rs.getInt("limitNum"));
+				bean.setLimitEnd(rs.getString("limitEnd"));
+				list.add(bean);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null){rs.close();}
+				if(pstmt!=null){pstmt.close();}
+				if(conn!=null){conn.close();}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}
+
+		return list;
 	}
 	
 	//강좌 추가
@@ -34,5 +81,35 @@ public class SubjectDao {
 	public void subjectDelete(int num) {
 		
 	}
-	//강좌
+	//강좌 상세
+	public SubjectDto subjectDetail(int num){
+		String sql="select a.subno as num, a.subnm as subname, a.limitno as limitNum, a.limitEnd as limitEnd, a.subcontent as content, b.name from subject a, admins b where a.adno=b.adno and a.subno=?";
+		SubjectDto bean = new SubjectDto();
+		
+		try{
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				bean.setNum(rs.getInt("num"));
+				bean.setName(rs.getString("subname"));
+				bean.setContent(rs.getString("content"));
+				bean.setLimitEnd(rs.getString("limitEnd"));
+				bean.setAdminName(rs.getString("name"));
+				bean.setLimitNum(rs.getInt("limitNum"));
+			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return bean;
+	}
 }
