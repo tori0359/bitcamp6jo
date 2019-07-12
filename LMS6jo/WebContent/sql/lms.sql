@@ -247,7 +247,21 @@ insert into LearningMaterials (lmno,lmnm,regdate,adno) values (LearningMaterials
 insert into LearningMaterials (lmno,lmnm,regdate,adno) values (LearningMaterials_seq.nextval, 'java자료2', sysdate, 1);
 
 insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항1','공지사항내용1',sysdate,1,3);
-insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항2','공지사항내용2',sysdate,1,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항2','공지사항내용2',sysdate,0,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항3','공지사항내용3',sysdate,0,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항4','공지사항내용4',sysdate,0,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항5','공지사항내용5',sysdate,1,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항6','공지사항내용6',sysdate,0,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항7','공지사항내용7',sysdate,0,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항8','공지사항내용8',sysdate,1,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항9','공지사항내용9',sysdate,0,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항10','공지사항내용10',sysdate,0,3);
+insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항11','공지사항내용11',sysdate,0,3);
+
+select * from(select rownum as rn,nno,nsub,ncontent,regdate,topstate,adno from(select * from (select * from notice order by topstate desc)order by nno desc)) ORDER BY topstate desc, nno desc;
+select * from(select rownum as rn,nno,nsub,ncontent,regdate,topstate,adno from(select * from notice order by topstate desc, nno desc));
+
+delete from notice where nno>=25;
 
 insert into SUBJECT (subno,subnm,subcontent,limitno,limitend,edustart,eduend,regdate,classno,classnm,adno) values 
 (subject_seq.nextval,'java과정','java과정입니다',20,'2019-08-07','2019-08-12','2019-10-10',sysdate,1,'java반',1);
