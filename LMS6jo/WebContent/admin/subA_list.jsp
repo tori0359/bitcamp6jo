@@ -45,7 +45,7 @@
 						<td><input type="checkbox" name="sub_cb<%=bean.getNum() %>" class="attend_cb"></td>
 						<td><%=bean.getNum() %></td>
 						<td><a href="<%=root%>/admin/subA_detail.jsp?idx=<%=bean.getNum() %>"><%=bean.getName() %></a></td>
-						<td><!-- <%=bean.getAdmin() %> --></td>
+						<td><%=bean.getAdminName() %> </td>
 						<td><%=bean.getLimitNum() %></td>
 						<td><%=bean.getLimitEnd()%> </td>
 					</tr>

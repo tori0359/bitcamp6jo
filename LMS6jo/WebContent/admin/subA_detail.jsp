@@ -32,7 +32,7 @@
 				</tr>
 				<tr>
 					<th>강사명</th>
-					<td></td>
+					<td><%=bean.getAdminName() %></td>
 					<th>제한인원</th>
 					<td><%=bean.getLimitNum() %></td>
 					<th>마감일</th>

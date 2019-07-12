@@ -29,7 +29,7 @@ public class SubjectDao {
 	//강좌목록
 	public ArrayList<SubjectDto> subjectList(){
 		ArrayList<SubjectDto> list=new ArrayList<SubjectDto>();
-		String sql = "select a.subno as num, a.subnm as name, a.limitno as limitNum, a.eduend as limitEnd, b.adno "
+		String sql = "select a.subno as num, a.subnm as subname, a.limitno as limitNum, a.limitEnd as limitEnd, b.name "
 				+ "from subject a, admins b where a.adno=b.adno and b.deptno=1";
 		System.out.println(sql);
 		try {
@@ -40,8 +40,8 @@ public class SubjectDao {
 			while(rs.next()) {
 				SubjectDto bean = new SubjectDto();
 				bean.setNum(rs.getInt("num"));
-				bean.setName(rs.getString("name"));
-//				bean.setAdmin(rs.getObject("admin"));
+				bean.setName(rs.getString("subname"));
+				bean.setAdminName(rs.getString("name"));
 				bean.setLimitNum(rs.getInt("limitNum"));
 				bean.setLimitEnd(rs.getString("limitEnd"));
 				list.add(bean);
@@ -76,7 +76,7 @@ public class SubjectDao {
 	}
 	//강좌 상세
 	public SubjectDto subjectDetail(int num) throws SQLException{
-		String sql="select a.subno as num, a.subnm as name, a.limitno as limitNum, a.eduend as limitEnd, a.subcontent as content from subject a, admins b where a.adno=b.adno and b.deptno=?";
+		String sql="select a.subno as num, a.subnm as subname, a.limitno as limitNum, a.limitEnd as limitEnd, a.subcontent as content, b.name from subject a, admins b where a.adno=b.adno and b.deptno=?";
 		SubjectDto bean = new SubjectDto();
 		
 		Connection conn=null;
@@ -89,9 +89,10 @@ public class SubjectDao {
 			rs=pstmt.executeQuery();
 			if(rs.next()){
 				bean.setNum(rs.getInt("num"));
-				bean.setName(rs.getString("name"));
+				bean.setName(rs.getString("subname"));
 				bean.setContent(rs.getString("content"));
 				bean.setLimitEnd(rs.getString("limitEnd"));
+				bean.setAdminName(rs.getString("name"));
 				bean.setLimitNum(rs.getInt("limitNum"));
 			}
 		}finally{
