@@ -12,12 +12,30 @@ public class QnaDto {
 	private String	aSub;			//답변제목
 	private String	aContent;		//답변내용
 	private Date	updateDate;		//답변등록일자
+	private String	name1;			//사용자 이름
+	private String 	name2;			//관리자 이름
 	
 	private UserDto user;			//사용자번호(user.num)
 	
 	//생성자
 	public QnaDto() {
 		
+	}
+
+	public String getName1() {
+		return name1;
+	}
+
+	public void setName1(String name1) {
+		this.name1 = name1;
+	}
+
+	public String getName2() {
+		return name2;
+	}
+
+	public void setName2(String name2) {
+		this.name2 = name2;
 	}
 
 	//getter, setter

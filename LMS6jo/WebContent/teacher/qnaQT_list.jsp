@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="java.util.ArrayList,com.bit.lms.model.dto.*"%>
 <%@include file="./../common/header.jspf" %>
 	<div id="content">
 		<%@include file="./../common/submenu.jspf" %>
@@ -18,15 +18,19 @@
 					</tr>
 				</thead>
 				<tbody>
+				<%ArrayList<QnaDto> list=(ArrayList<QnaDto>)request.getAttribute("qnalist");
+					for(QnaDto qto : list){
+				%>
 					<tr>
-						<td>1</td>
-						<td>Java반</td>
-						<td><a href="#">인생이란?</a></td>
-						<td>황인준</td>
-						<td>2019-07-01</td>
-						<td>2019-07-02</td>
-						<td>답변완료</td>
+						<td><%=qto.getNum() %></td>
+						<td><%=qto.getName2() %></td>
+						<td><a href="qnaQT_detail.jsp?idx=<%=qto.getNum()%>"><%=qto.getqSub() %></a></td>
+						<td><%=qto.getName1() %></td>
+						<td><%=qto.getRegDate() %></td>
+						<td><%if(qto.getaSub()!=null){%><%=qto.getUpdateDate() %><%}else{} %></td>
+						<td><%if(qto.getaSub()!=null){%>답변완료<%}else{} %></td>
 					</tr>
+					<%} %>
 				</tbody>
 			</table>
 		</div>
