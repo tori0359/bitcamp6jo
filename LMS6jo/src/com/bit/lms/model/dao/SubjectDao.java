@@ -30,7 +30,7 @@ public class SubjectDao {
 	public ArrayList<SubjectDto> subjectList(){
 		ArrayList<SubjectDto> list=new ArrayList<SubjectDto>();
 		String sql = "select a.subno as num, a.subnm as subname, a.limitno as limitNum, a.limitEnd as limitEnd, b.name "
-				+ "from subject a, admins b where a.adno=b.adno and b.deptno=1";
+				+ "from subject a, admins b where a.adno=b.adno order by a.subno desc";
 		System.out.println(sql);
 		try {
 			conn=LmsOracle.getConnection();
@@ -62,8 +62,32 @@ public class SubjectDao {
 	}
 	
 	//강좌 추가
-	public void subjectAdd(String name, String content, int limitNum, String limitEnd, String eduStart, String eduEnd, Date regdate) {
+	public void subjectAdd(String name, String content, int limitNum, String limitEnd, String eduStart, String eduEnd){
+		String sql="INSERT INTO SUBJECT VALUES (SUBJECT_SEQ.NEXTVAL,?,?,?,?,?,?, SYSDATE, 0,'aa반',1)";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
 		
+		try {
+			conn=LmsOracle.getConnection();			
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, content);
+			pstmt.setInt(3, limitNum);
+			pstmt.setString(4, limitEnd);
+			pstmt.setString(5, eduStart);
+			pstmt.setString(6, eduEnd);
+			int result=pstmt.executeUpdate();
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
 	}
 	
 	//강좌 수정
@@ -75,8 +99,8 @@ public class SubjectDao {
 		
 	}
 	//강좌 상세
-	public SubjectDto subjectDetail(int num) throws SQLException{
-		String sql="select a.subno as num, a.subnm as subname, a.limitno as limitNum, a.limitEnd as limitEnd, a.subcontent as content, b.name from subject a, admins b where a.adno=b.adno and b.deptno=?";
+	public SubjectDto subjectDetail(int num){
+		String sql="select a.subno as num, a.subnm as subname, a.limitno as limitNum, a.limitEnd as limitEnd, a.subcontent as content, b.name from subject a, admins b where a.adno=b.adno and a.subno=?";
 		SubjectDto bean = new SubjectDto();
 		
 		Connection conn=null;
@@ -95,10 +119,16 @@ public class SubjectDao {
 				bean.setAdminName(rs.getString("name"));
 				bean.setLimitNum(rs.getInt("limitNum"));
 			}
+		}catch(SQLException e){
+			e.printStackTrace();
 		}finally{
-			if(rs!=null)rs.close();
-			if(pstmt!=null)pstmt.close();
-			if(conn!=null)conn.close();
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		return bean;

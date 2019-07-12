@@ -16,10 +16,13 @@ public class SubjectDetailController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		SubjectDao dao = new SubjectDao();
-		req.setAttribute("subDetail", dao.subjectDetail());
+		String idx = req.getParameter("idx");
+		int num = Integer.parseInt(idx);
 		
-		RequestDispatcher rd = req.getRequestDispatcher("/admin/subA_Detail.jsp");
+		SubjectDao dao = new SubjectDao();
+		req.setAttribute("subDetail", dao.subjectDetail(num));
+		
+		RequestDispatcher rd = req.getRequestDispatcher("/admin/subA_detail.jsp");
 		rd.forward(req, resp);
 	}
 }
