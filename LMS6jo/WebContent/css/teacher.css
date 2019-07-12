@@ -137,3 +137,10 @@ table{border-collapse: collapse;}
 
 
 #subContent table.detail_type th{width: 10%;}
+.classA_div{border:1px solid black;}
+
+#beforeClass{display:block;border:1px solid black; float:left;width:350px;heigh:400px;}
+#beforeClass>table{width:350px;}
+#middle_div{border:1px solid black; float:left;width:100px;}
+#afterClass{border:1px solid black; float:left;width:350px;}
+#afterClass>table{width:350px;}

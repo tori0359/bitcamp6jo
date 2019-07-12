@@ -79,3 +79,7 @@
 <!-- jaehwan--->
 <!-- 아래로 2ket -->
 #subContent table.detail_type th{width: 10%;}
+
+.beforeClass{display:inline-block;width:400px;float:left;}
+.middle_div{width:100px;}
+.afterClass{display:inline-block;width:400px;float:right;}
