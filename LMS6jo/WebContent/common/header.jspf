@@ -57,7 +57,7 @@
             	<%}else if((session.getAttribute("deptno")).equals("2")){ %>
 				<div id="LMSGO">
 					<!-- 영업팀 메인페이지로 보여줄것!(url 변경) -->
-            		<a href="<%=root%>/teacher/main.lms?deptno=<%=session.getAttribute("deptno")%>">LMS</a>
+            		<a href="<%=root%>/notice/list.lms?deptno=<%=session.getAttribute("deptno")%>">LMS</a>
             	</div>
             	<%}else if((session.getAttribute("deptno")).equals("3")){ %>
             	<div id="LMSGO">
