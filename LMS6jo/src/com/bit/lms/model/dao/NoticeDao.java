@@ -62,12 +62,54 @@ public class NoticeDao {
 	
 	
 	//상세보기
-	public void detailOne(int num){
+	public NoticeDto detailOne(int num){
+		String sql="select * from notice where nno=?";
+		NoticeDto dto=new NoticeDto();
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				dto.setNum(rs.getInt("num"));
+				dto.setSubject(rs.getString("subject"));
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null){rs.close();}
+				if(pstmt!=null){pstmt.close();}
+				if(conn!=null){conn.close();}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}
+		return dto;
 		
 	}
 	
 	//추가 (nextval로 num, sysdate로 regdate)
 	public void addList(String subject, String content, int topstate){
+		String sql="insert into notice (nno,nsub,ncontent,topstate,regdate,adno) values (notice_seq.nextval,?,?,?,sysdate,2)";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, subject);
+			pstmt.setString(2, content);
+			pstmt.setInt(3, topstate);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(pstmt!=null){pstmt.close();}
+				if(conn!=null){conn.close();}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}
 		
 	}
 	
