@@ -27,6 +27,7 @@ public class LoginController extends HttpServlet{
 		UserDao dao=new UserDao();
 		int result=dao.login(id, pw);
 		String name=dao.loginname(id);
+		String userno=dao.loginno(id)+"";
 		
 		
 		HttpSession session=req.getSession();
@@ -34,9 +35,10 @@ public class LoginController extends HttpServlet{
 		if(result==1){
 			session.setAttribute("userid", id);
 			session.setAttribute("name", name);
+			session.setAttribute("userno", userno);
+			System.out.println(userno+"zz");
 			resp.sendRedirect("/LMS6jo/index.jsp?param=success");
 		}else if(result==0){
-			System.out.println(result);
 			resp.sendRedirect("/LMS6jo/login/login.jsp?param=fail");
 		}
 		

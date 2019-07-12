@@ -22,8 +22,6 @@
                 <form method="post">
             	<%
             	String whatsubb=String.valueOf(request.getAttribute("whatsubb"));
-            	System.out.println(request.getAttribute("whatsubb"));
-            	System.out.println(whatsubb);
             		if(Integer.parseInt(whatsubb)==1 || request.getAttribute("whatsubb")==null){
             			session.setAttribute("whatsub", 1);
             		}else if(Integer.parseInt(whatsubb)==2){

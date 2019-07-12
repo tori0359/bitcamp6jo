@@ -1,12 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.bit.lms.model.dto.*,java.util.ArrayList"%>
      
 <%@include file="./../../common/header.jspf" %>
 <script>
       $( document ).ready( function() {
-        $( '.check_all' ).click( function() {
-          $( '.attend_cb' ).prop( 'checked', this.checked );
-        } );
       } );
     </script>
 	<div id="content">
@@ -23,12 +20,6 @@
 		                <option value="2">7월</option>
 		                <option value="3">8월</option>
 		            </select>
-		            <select name="opt_day">
-		                <option value="0">일 선택</option>
-		                <%for(int i=1; i<32;i++){ %>
-		                <option value="<%=i%>일"><%=i%></option>
-		                <%} %>
-		            </select>
 		        </form>   
 	    		</div>
 			<table class="">
@@ -41,30 +32,20 @@
 						<th><%=i%></th>
 						<%} %>
 					</tr>
-					<tr>
-						<%for(int i=1; i<32; i++){
-						if(i==8){%>
-						<th><input type="checkbox" name="all" class="check_all"></th>
-						<%}else{%>
-						<th></th>
-						<%}
-						}  %>
-					</tr>
 				</thead>
 				<tbody>
-					<%for(int j=1;j<5;j++){ %>
+					<%
+					ArrayList<AttendDto> list=(ArrayList<AttendDto>)request.getAttribute("attlist");
+					
+					for(AttendDto dto : list){ %>
 					<tr>
-						<td><%=j %></td>
-						<td>학생<%=j %></td>
-						<%for(int i=1; i<32; i++){
-						if(i==8){%>
-						<td><input type="checkbox" name="cb<%=i %>" class="attend_cb"></td>
-						<%}else{%>
-						<td></td>
-						<%}
-						}  
-					}%>
+						<td><%=dto.getNum() %></td>
+						<td><%=dto.getName() %></td>
+						<td>
+						<%=dto.getAttDate() %>
+						</td>
 					</tr>
+					<%} %>
 				</tbody>
 			</form>
 			</table>

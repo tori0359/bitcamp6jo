@@ -7,6 +7,7 @@ public class AttendDto {
 	private int		num;			//출결번호
 	private int		state;			//출결상태(1:출석,2:지각,3:조퇴,4:결석)
 	private Date	attDate;		//출결일자
+	private String	name;			//사용자이름
 	
 	//사용자
 	private UserDto user;			//사용자번호(user.num)
@@ -14,6 +15,14 @@ public class AttendDto {
 	//getter, setter
 	public AttendDto() {
 		
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public int getNum() {

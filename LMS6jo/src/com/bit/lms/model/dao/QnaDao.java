@@ -1,6 +1,7 @@
 package com.bit.lms.model.dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -37,6 +38,14 @@ public class QnaDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		
@@ -47,16 +56,15 @@ public class QnaDao {
 	//질의응답 상세
 	public QnaDto qnaDetail(int num){
 		QnaDto qto=new QnaDto();
-		String sql1="select A.qnano,A.qsub,B.name,A.regdate from qna A,users B,subject C where A.userno=B.userno and B.subno=C.subno";
-		String sql="select qnano,qsub,name,regdate,qcontent from qna where num=?";
+		String sql="select A.qnano,A.qsub,B.name,A.regdate,A.qcontent from qna A,users B where A.userno=B.userno and A.qnano=?";
 		
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
-		
 		try {
 			conn=LmsOracle.getConnection();
 			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
 			rs=pstmt.executeQuery();
 			if(rs.next()){
 				qto.setNum(rs.getInt("qnano"));
@@ -67,15 +75,46 @@ public class QnaDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		
 		return qto;
 	}
 	
 	//질의응답 등록
-	public int qnaAInsert(){
+	public int qnaAInsert(String sub, String content, Date regdate, int userno){
+		int result=0;
+		String sql="insert into qna (qnano,qsub,qcontent,regdate,userno) values (qna_seq.nextval,?,?,?,?)";
 		
-		return 0;
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		
+		try {
+			conn=LmsOracle.getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, sub);
+			pstmt.setString(2, content);
+			pstmt.setDate(3, regdate);
+			pstmt.setInt(4, userno);
+			result=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 	
 	//질의응답 수정
@@ -85,9 +124,12 @@ public class QnaDao {
 	}
 	
 	//질의응답 삭제
-	public int qnaADel(){
+	public int qnaADel(int num){
 		
-		return 0;
+		int result=0;
+		
+		
+		return result;
 	}
 	
 }
