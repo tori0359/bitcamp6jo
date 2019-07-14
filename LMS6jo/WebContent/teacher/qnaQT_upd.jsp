@@ -24,8 +24,8 @@
 				</tr>
 			</table>
 			<center>
-				<button class="upd_btn">수정</button>
-				<button class="upd_btn">리스트</button>
+				<button class="list_btn">수정</button>
+				<button class="list_btn">리스트</button>
 			</center>		
 		</div>
     </div>

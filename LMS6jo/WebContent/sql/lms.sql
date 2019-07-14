@@ -113,8 +113,13 @@ CREATE TABLE subject
 	limitend              VARCHAR2(20)  NOT NULL ,
 	edustart              VARCHAR2(20)  NOT NULL ,
 	eduend                VARCHAR2(20)  NOT NULL ,
+<<<<<<< HEAD
 	regdate               DATE  NULL ,
 	classno				  NUMBER NULL ,
+=======
+	regdate               DATE  NULL ,
+	classno               NUMBER  NOT NULL ,
+>>>>>>> branch '2ket' of https://github.com/tori0359/bitcamp6jo
 	classnm               VARCHAR2(20)  NULL ,
 	adno                  NUMBER  NOT NULL ,
 CONSTRAINT  XPKsubject PRIMARY KEY (subno),
@@ -238,6 +243,7 @@ insert into pwfind values (pwfind_seq.nextval, '초등학교 이름');
 insert into pwfind values (pwfind_seq.nextval, '중학교 이름');
 insert into pwfind values (pwfind_seq.nextval, '고등학교 이름');
 
+<<<<<<< HEAD
 
 insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'홍길동','lecture','1234','1234','010-1234-5678','asd@naver.com',1,'일진초',2,1);
 insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'고길동','admin','1234','1234','010-5678-1234','asaaad@naver.com',1,'일진중',3,2);
@@ -267,3 +273,8 @@ commit
 
 select * from subject;
 
+=======
+insert into admins (adno,name,id,pw1,pw2,cp,email,sex,pwa,pwfno,deptno) values (admins_seq.nextval,'관리자','admin','1234','1234','01012345678','asd@naver.com',1,'a',2,1);
+commit;
+>>>>>>> refs/remotes/origin/injun0708
+>>>>>>> branch '2ket' of https://github.com/tori0359/bitcamp6jo

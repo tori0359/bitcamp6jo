@@ -15,7 +15,7 @@
 	        </ul>
 	    </div>
 	    <div id="subContent">
-	    <div class="list_div">
+	    <div class="classdiv">
         <div class="classA_div">
         
         <div id="beforeClass">

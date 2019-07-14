@@ -36,7 +36,11 @@
 		</script>
 		<div id="subContent">
 		<div class="list_div">
+<<<<<<< HEAD
 			<table class="type13">
+=======
+			<table class="type12">
+>>>>>>> branch '2ket' of https://github.com/tori0359/bitcamp6jo
 				<thead>
 					<tr>
 						<th>번호</th>
@@ -62,7 +66,8 @@
 					</tr>
 				</tbody>
 			</table>
-			<button class="input_btn">입력</button>
+			<button class="list_btn">입력</button>
+		</div>
 		</div>
     </div>
 <%@include file="./../common/footer.jspf" %>

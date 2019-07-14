@@ -6,7 +6,12 @@
 		<div id="subContent">
 		<div class="list_div">
 			<h1>학습자료 등록</h1>
+<<<<<<< HEAD
 			<table class="type12">
+=======
+		<div class="list_div">
+			<table class="type11">
+>>>>>>> branch '2ket' of https://github.com/tori0359/bitcamp6jo
 				<tr>
 					<th>제목</th>
 					<td style="text-align: left;">비트캠프의 비밀</td>
@@ -21,6 +26,7 @@
 			<center>
 				<input type="button" class="list_btn" value="등록"/>
 			</center>
+		</div>
 		</div>
     </div>
 <%@include file="./../common/footer.jspf" %>

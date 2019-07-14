@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@include file="./../common/header.jspf" %>
+	<%@include file="./../common/submenu.jspf" %>
 	<div id="content">
-		<%@include file="./../common/submenu.jspf" %>
 		<div id="subContent">
 			
 		</div>
