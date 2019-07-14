@@ -323,15 +323,63 @@ public class UserDao {
 				}
 	
 	//비밀번호찾기 - id
-	public String findPw(String id, int pwq, String pwa){
+	public int findPw(String id, int pwq, String pwa){
+		String sql="select pw1 from users where id=? and pwfno=? and pwa=?";
+		int result=0;
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.setInt(2, pwq);
+			pstmt.setString(3, pwa);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				result=1;
+			}else{
+				result=0;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
-		return null;
+		return result;
 	}
 	
 	//비밀번호찾기
-	public int updPw(String pw1, String pw2){
+	public int updPw(String pw1, String pw2, String id){
+		String sql="update users set pw1=?, pw2=? where id=?";
+		int result=0;
 		
-		return 0;
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, pw1);
+			pstmt.setString(2, pw2);
+			pstmt.setString(3, id);
+			result=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result=0;
+		}finally{
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return result;
+		
 	}
 	
 	//회원탈퇴

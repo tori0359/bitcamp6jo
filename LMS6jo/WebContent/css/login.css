@@ -2,6 +2,8 @@
 		#login-container{margin-left: 610px;}
 		#toptable td{height: 60px;}
         #loginID{width: 350px; height: 35px;}
+        #pw1{width: 350px; height: 35px;}
+        #pw2{width: 350px; height: 35px;}
         #loginPW{width: 350px; height: 35px;}
         #loginbtn{
             border: 1px solid #3498DB;

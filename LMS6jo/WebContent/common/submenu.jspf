@@ -2,14 +2,33 @@
     pageEncoding="UTF-8"%>
 <!-- 로그인을 하고 LMS를 누를 때 dept번호를 받아서 번호마다 다른 서브 메뉴 보이게 구현할것! -->
 <!-- 강사용 -->
+<%
+	String deptno = (String)session.getAttribute("deptno");
+%>
+
 <div id="leftMenu">
+		<%if(deptno.equals("1")){//강사페이지 %>
         <ul>
            <li><a class="active">관리자 페이지</a></li>
-           <li><a href="<%=root%>/teacher/main.lms?deptno=1">메인</a></li>
-           <li><a href="<%=root%>/teacher/attend/list.lms?deptno=1"">출결관리</a></li>
-           <li><a href="<%=root%>/teacher/subject/list.lms?deptno=1">과제관리</a></li>
+           <li><a href="<%=root%>/teacher/main.lms">메인</a></li>
+           <li><a href="<%=root%>/teacher/attend/list.lms"">출결관리</a></li>
+           <li><a href="<%=root%>/teacher/subject/list.lms">과제관리</a></li>
            <li><a href="<%=root%>/teacher/lm/list.lms">학습자료관리</a></li>
            <li><a href="<%=root%>/teacher/scoreT_list.jsp">성적관리</a></li>
            <li><a href="<%=root%>/teacher/qnaQT_list.jsp">Q&A</a></li>
        </ul>
+       <%}else if(deptno.equals("2")){//영업부 메인페이지와 연결 %>
+       <ul>
+           <li><a class="active">관리자 페이지</a></li>
+           <li><a href="#">공지사항</a></li>
+       </ul>
+       <%}else if(deptno.equals("3")){//행정팀 메인페이지와 연결 %>
+       <ul>
+           <li><a class="active">관리자 페이지</a></li>
+           <li><a href="#">메인</a></li>
+           <li><a href="#">강좌개설</a></li>
+           <li><a href="#">반배정</a></li>
+           <li><a href="#">출결관리</a></li>
+       </ul>   
+       <%}%>
 </div> 

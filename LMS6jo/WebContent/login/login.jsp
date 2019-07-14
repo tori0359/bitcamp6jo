@@ -54,7 +54,7 @@
        <table>
        <br>
         <tr>
-            <td style="width: 175px; height: 25px; text-align: center; border-right:2px solid darkgray "><a class="atag" href="#">비밀번호 찾기</a></td>
+            <td style="width: 175px; height: 25px; text-align: center; border-right:2px solid darkgray "><a class="atag" href="<%=root%>/login/pwf.jsp">비밀번호 찾기</a></td>
             <td style="width: 175px; text-align: center;"><a class="atag" href="<%=root%>/join/SignUp_terms.lms">회원가입</a></td>
         </tr>
         </table>
@@ -63,7 +63,6 @@
 <%@ include file="./../common/footer.jspf" %> 
 <%
 	String param=request.getParameter("param");
-	System.out.println(param);
 	if(param!=null){
 		if("fail".equals(param)){	
 	

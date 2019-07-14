@@ -14,7 +14,6 @@
             <li><a href="##">회원탈퇴</a></li>
         </ul>
     </div>
-
 	<div id="content">
     	<h2>출결확인</h2>
     	<div id="attend_content">
