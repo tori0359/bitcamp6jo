@@ -28,7 +28,9 @@
 		<%
 			QnaDto qto=(QnaDto)request.getAttribute("qnaDetail");
 		%>
+		<form action="qnaQT_upd.lms">
 			<table class="type11">
+			<input type="hidden" name="qnano" value="<%=qto.getNum()%>" />
 				<tr>
 					<th class="th1">작성자</th>
 					<td style="text-align: left"><%=qto.getName1() %></td>
@@ -47,9 +49,16 @@
 				</tr>
 			</table>
 			<center>
-				<button class="list_btn"><a href="qnaQT_upd.bit?idx=#">수정</a></button>
-				<button class="list_btn"><a href="">삭제</a></button>
-			</center>		
+				<%if(String.valueOf(session.getAttribute("deptno")).equals("1")){%>
+				
+				<button type="submit" class="list_btn">답변</button>
+				<button class="list_btn"><a href="#">삭제</a></button>
+				<%}else { %>
+				<button type="submit" class="list_btn">수정</button>
+				<button class="list_btn"><a href="#">삭제</a></button>
+				<%} %>
+			</center>
+			</form>		
 		</div>
     </div>
 <%@include file="./../common/footer.jspf" %>

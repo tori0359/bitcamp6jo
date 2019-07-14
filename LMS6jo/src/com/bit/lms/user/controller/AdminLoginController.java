@@ -38,6 +38,8 @@ public class AdminLoginController extends HttpServlet{
 			session.setAttribute("name", name);
 			session.setAttribute("deptno", deptno);
 			session.setAttribute("adno", adno);
+			System.out.println("adminid:"+session.getAttribute("adminid")+"name:"+session.getAttribute("name")+
+					"deptno:"+session.getAttribute("deptno")+"adno:"+session.getAttribute("adno"));
 			resp.sendRedirect("/LMS6jo/index.jsp?param=success");
 			System.out.println(deptno);
 		}else if(result==0){

@@ -4,6 +4,9 @@
 <!-- 강사용 -->
 <%
 	String deptno = (String)session.getAttribute("deptno");
+	if(deptno==null){ // 이걸 해야 else가 먹혀서 일단 쓰겠습니다
+		deptno="0";
+	}
 %>
 
 <div id="leftMenu">
@@ -30,5 +33,12 @@
            <li><a href="#">반배정</a></li>
            <li><a href="#">출결관리</a></li>
        </ul>   
-       <%}%>
+       <%}else {%>
+       <ul>
+           <li><a class="active">마이 페이지</a></li>
+           <li><a href="#">메인</a></li>
+           <li><a href="#">성적</a></li>
+           <li><a href="#">출결</a></li>
+       </ul>   
+       <%} %>
 </div> 

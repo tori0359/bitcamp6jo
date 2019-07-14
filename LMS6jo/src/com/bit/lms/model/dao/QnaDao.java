@@ -118,9 +118,31 @@ public class QnaDao {
 	}
 	
 	//질의응답 수정
-	public int qnaAUpd(){
+	public int qnaAUpd(String asub, String acontent, int adno){
+		int result=0;
+		String sql="update qna set asub=?,acontent=? where qnano=?";
 		
-		return 0;
+		Connection conn=null;
+		PreparedStatement pstmt=null;
+		
+		try {
+			conn=LmsOracle.getConnection();
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, asub);
+			pstmt.setString(2, acontent);
+			pstmt.setInt(3, adno);
+			result=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 	
 	//질의응답 삭제

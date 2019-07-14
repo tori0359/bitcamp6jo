@@ -24,14 +24,16 @@ public class QnaAInsertController extends HttpServlet{
 	//입력
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		HttpSession session = req.getSession();
-		if(session.getAttribute("userno")==null){
-			resp.sendRedirect(req.getContextPath()+"/login/login.lms");
-		}else{
-			RequestDispatcher rd = req.getRequestDispatcher("/teacher/qnaQT_add.jsp");
-			rd.forward(req, resp);			
-		}
+//		HttpSession session = req.getSession();
+//		System.out.println("userno" + session.getAttribute("userno"));
+//		if(session.getAttribute("userno")==null){
+//			resp.sendRedirect(req.getContextPath()+"/login/login.lms");
+//		}else{
+//			RequestDispatcher rd = req.getRequestDispatcher("/teacher/qnaQT_add.jsp");
+//			rd.forward(req, resp);			
+//		}
+		RequestDispatcher rd = req.getRequestDispatcher("/teacher/qnaQT_add.jsp");
+		rd.forward(req, resp);
 	}
 	
 	@Override
