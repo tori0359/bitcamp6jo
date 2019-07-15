@@ -262,6 +262,8 @@ select * from(select rownum as rn,nno,nsub,ncontent,regdate,topstate,adno from(s
 
 delete from notice where nno>=25;
 
+select * from(select rownum as rn,nno,nsub,ncontent,regdate,topstate,adno from(select * from notice where nsub like '%%'  order by topstate desc, nno desc));
+
 insert into SUBJECT (subno,subnm,subcontent,limitno,limitend,edustart,eduend,regdate,classno,classnm,adno) values 
 (subject_seq.nextval,'java과정','java과정입니다',20,'2019-08-07','2019-08-12','2019-10-10',sysdate,1,'java반',1);
 

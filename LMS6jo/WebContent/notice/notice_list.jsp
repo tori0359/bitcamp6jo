@@ -19,8 +19,10 @@ function add(){
 <div id="notice-main">
 <h2 style="margin-left: 800px;">공지사항</h2>
 	<div style="margin-left: 1250px;">
-	<input type="text" placeholder="검색어를 입력하세요" style="height: 25px;">
-	<input type="button" value="검색" style="border: 1px solid #7F7F7F; background-color: #7F7F7F;color: white;border-radius: 5px; width: 55px; height: 32px; font-weight: bold;">
+	<form action="<%=root %>/notice/list.lms" method="get">
+	<input name="keyword" type="text" placeholder="검색어를 입력하세요" style="height: 25px;">
+	<input type="submit" value="검색" style="border: 1px solid #7F7F7F; background-color: #7F7F7F;color: white;border-radius: 5px; width: 55px; height: 32px; font-weight: bold;">
+	</form>
 	</div>
 	<table id="salesList" style="width: 1200px; margin-left: 285px;">
 					<tr  style="text-align: center; background-color: #eeeeee; height: 34px;">

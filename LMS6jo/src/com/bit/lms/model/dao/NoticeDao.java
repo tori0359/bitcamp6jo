@@ -28,9 +28,10 @@ public class NoticeDao {
 
 
 	//목록불러오기!!
-	public ArrayList<NoticeDto> list(){
+	public ArrayList<NoticeDto> list(String keyword){
+		if(keyword==null)keyword="";
 		ArrayList<NoticeDto> list=new ArrayList<NoticeDto>();
-		String sql="select * from(select rownum as rn,nno,nsub,ncontent,regdate,topstate,adno from(select * from notice order by topstate desc, nno desc))";
+		String sql="select * from(select rownum as rn,nno,nsub,ncontent,regdate,topstate,adno from(select * from notice where nsub like '%"+keyword+"%' order by topstate desc, nno desc))";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
