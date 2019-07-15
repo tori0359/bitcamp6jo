@@ -311,7 +311,6 @@ public class UserDao {
 						try {
 							if(rs!=null)rs.close();
 							if(pstmt!=null)pstmt.close();
-							if(conn!=null)conn.close();
 						} catch (SQLException e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();

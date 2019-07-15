@@ -36,7 +36,6 @@ public class LoginController extends HttpServlet{
 			session.setAttribute("userid", id);
 			session.setAttribute("name", name);
 			session.setAttribute("userno", userno);
-			System.out.println(userno+"zz");
 			resp.sendRedirect("/LMS6jo/index.jsp?param=success");
 		}else if(result==0){
 			resp.sendRedirect("/LMS6jo/login/login.jsp?param=fail");

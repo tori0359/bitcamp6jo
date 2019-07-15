@@ -46,7 +46,9 @@
 				%>
 				</tbody>
 			</table>
-			<a class="list_btn" href="<%=root%>/teacher/lm/add.lms">업로드</a>
+			<%if(session.getAttribute("adminid") != null){ %>
+				<a class="list_btn" href="<%=root%>/teacher/lm/add.lms">업로드</a>
+			<%}%>
 
 		</div>
     </div>
