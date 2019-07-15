@@ -14,12 +14,21 @@ public class QnaDto {
 	private Date	updateDate;		//답변등록일자
 	private String	name1;			//사용자 이름
 	private String 	name2;			//관리자 이름
+	private int		userno;			//사용자 번호
 	
 	private UserDto user;			//사용자번호(user.num)
 	
 	//생성자
 	public QnaDto() {
 		
+	}
+
+	public int getUserno() {
+		return userno;
+	}
+
+	public void setUserno(int userno) {
+		this.userno = userno;
 	}
 
 	public String getName1() {

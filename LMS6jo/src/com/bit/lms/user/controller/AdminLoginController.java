@@ -28,6 +28,7 @@ public class AdminLoginController extends HttpServlet{
 		int result=dao.adminlogin(id, pw);
 		String name=dao.loginAdminname(id);
 		String deptno=dao.deptNo(id)+"";
+		String adno=dao.loginAdmino(id)+"";
 		
 		
 		HttpSession session=req.getSession();
@@ -36,6 +37,9 @@ public class AdminLoginController extends HttpServlet{
 			session.setAttribute("adminid", id);
 			session.setAttribute("name", name);
 			session.setAttribute("deptno", deptno);
+			session.setAttribute("adno", adno);
+			System.out.println("adminid:"+session.getAttribute("adminid")+"name:"+session.getAttribute("name")+
+					"deptno:"+session.getAttribute("deptno")+"adno:"+session.getAttribute("adno"));
 			resp.sendRedirect("/LMS6jo/index.jsp?param=success");
 			System.out.println(deptno);
 		}else if(result==0){

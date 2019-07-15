@@ -20,7 +20,7 @@
        <%}else if(deptno.equals("2")){//영업부 메인페이지와 연결 %>
        <ul>
            <li><a class="active">관리자 페이지</a></li>
-           <li><a href="<%=root%>/notice/list.lms">공지사항</a></li>
+           <li><a href="#">공지사항</a></li>
        </ul>
        <%}else if(deptno.equals("3")){//행정팀 메인페이지와 연결 %>
        <ul>

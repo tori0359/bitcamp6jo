@@ -61,6 +61,7 @@ public class LearningMaterialsAddController extends HttpServlet{
 		String rename 	= mr.getFilesystemName("fileName");		//중복이 되면서 바뀐 이름
 		
 		req.setCharacterEncoding("utf-8");
+
 		req.setAttribute("fname", rename);
 		
 		//관리자번호(강사번호)를 가지고온다.

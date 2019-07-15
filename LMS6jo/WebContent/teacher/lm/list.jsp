@@ -22,6 +22,8 @@
 					ArrayList<LearningMaterialsDto> list = null;
 					list = (ArrayList<LearningMaterialsDto>)request.getAttribute("lmList");
 					if(list != null){
+						
+						
 						for(LearningMaterialsDto bean : list){
 				%>
 							<tr>						
@@ -32,6 +34,7 @@
 								<td>
 								<% if(bean.getFileName()!=null){%>
 									<a href="<%=root %>/teacher/lm/down.lms?fileName=<%=bean.getFileName()%>">
+
 										<i class="fa fa-file-text-o"></i>
 									</a>
 								<%}%> 
