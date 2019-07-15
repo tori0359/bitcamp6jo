@@ -22,28 +22,31 @@
 					ArrayList<LearningMaterialsDto> list = null;
 					list = (ArrayList<LearningMaterialsDto>)request.getAttribute("lmList");
 					if(list != null){
+						
+						
 						for(LearningMaterialsDto bean : list){
 				%>
-					<tr>
-						<td><%=bean.getNum() %></td>
-						<td><%=bean.getName() %></td>
-						<td><%=bean.getAname() %></td>
-						<td><%=bean.getRegdate() %></td>
-						<td>
-						<% if(bean.getFileName()!=null){%>
-							<a href="#">
-								<i class="fa fa-file-text-o"></i>
-							</a>
-						<%}%> 
-						</td>
-					</tr>
+							<tr>						
+								<td><input type="hidden" name="name" value="<%=bean.getName() %>"/><%=bean.getNum() %></td>
+								<td><%=bean.getName() %></td>
+								<td><%=bean.getAname() %></td>
+								<td><%=bean.getRegdate() %></td>
+								<td>
+								<% if(bean.getFileName()!=null){%>
+									<a href="#">
+										<i class="fa fa-file-text-o"></i>
+									</a>
+								<%}%> 
+								</td>
+							</tr>
 				<%
 						}
 					}
 				%>
 				</tbody>
 			</table>
-			<a class="list_btn" href="<%=root%>/teacher/lmT_add.jsp">업로드</a>
+			<a class="list_btn" href="<%=root%>/teacher/lm/add.lms">업로드</a>
+
 		</div>
     </div>
 <%@include file="./../../common/footer.jspf" %>

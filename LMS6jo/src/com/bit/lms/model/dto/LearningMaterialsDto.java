@@ -12,7 +12,8 @@ public class LearningMaterialsDto {
 	private String 	filePath;	//파일경로
 	
 	//관리자 객체
-	private AdminDto admin;		//관리자번호(admin.num)
+	//private AdminDto admin;		//관리자번호(admin.num)
+	private int adno;			//관리자번호
 	private String aname;		//강사이름
 	
 	//생성자
@@ -61,12 +62,12 @@ public class LearningMaterialsDto {
 		this.filePath = filePath;
 	}
 
-	public AdminDto getAdmin() {
-		return admin;
+	public int getAdno() {
+		return adno;
 	}
 
-	public void setAdmin(AdminDto admin) {
-		this.admin = admin;
+	public void setAdno(int adno) {
+		this.adno = adno;
 	}
 
 	public String getAname() {

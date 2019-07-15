@@ -5,22 +5,23 @@
 		<%@include file="./../../common/submenu.jspf" %>
 		<div id="subContent">
 		<div class="list_div">
-			<h2>학습자료 등록</h1>
+			<h2>학습자료 등록</h2>
+			<form action="<%=root %>/teacher/lm/add.lms" method="post" enctype="multipart/form-data">
 			<table class="type12">
 				<tr>
 					<th>제목</th>
-					<td style="text-align: left;">비트캠프의 비밀</td>
+					<td style="text-align: left;"><input name="lmnm" type="text" placeholder="학습자료제목을 입력!"></td>
 				</tr>
 				<tr>
 					<th class="file">파일첨부</th>
 					<td>
-						<input type="file"/>
+						<input type="file" name="fileName"/>
 					</td>
 				</tr>
 			</table>
-			<center>
-				<input type="button" class="list_btn" value="등록"/>
-			</center>
+			<input class="list_btn" type="submit" value="등록"/>
+			</form>
 		</div>
+
     </div>
 <%@include file="./../../common/footer.jspf" %>

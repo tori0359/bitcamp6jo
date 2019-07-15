@@ -15,7 +15,16 @@ public class SubjectDto {
 	private Date		regdate;		// 강좌작성일자
 	private int			classNum;		// 반번호
 	private String		className;		// 반명
+	private String		adminName;		// 강사 이름
 	
+	public String getAdminName() {
+		return adminName;
+	}
+
+	public void setAdminName(String adminName) {
+		this.adminName = adminName;
+	}
+
 	//관리자
 	private AdminDto	admin;			//관리자번호(admin.num)
 
