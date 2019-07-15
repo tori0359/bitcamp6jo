@@ -38,10 +38,11 @@
 					<td colspan=6><%=bean.getContent() %></td>
 				</tr>
 		</table>
-			<p class="">
+			<div class="">
 				<button class="list_btn">수정</button>
 				<button class="list_btn">삭제</button>
-			</p>
+				
+			</div>
 			</div>
 			</div>
     	</div>
