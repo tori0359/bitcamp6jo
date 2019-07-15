@@ -5,15 +5,7 @@
     pageEncoding="UTF-8"%>
 <%@include file="./../common/header.jspf" %>
 	<div id="content">
-	<div id="leftMenu">
-        <ul>
-            <li><a class="active">관리자 페이지</a></li>
-            <li><a href="##">메인</a></li>
-            <li><a href="##">강좌개설</a></li>
-            <li><a href="##">반배정</a></li>
-            <li><a href="##">출결관리</a></li>
-        </ul>
-    </div>
+	<%@include file="./../../common/submenu.jspf" %>
 		<div id="subContent">
 		<div class="list_div">
 		<div id="lectureDetail">

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 	/*subContent area */
-#subContent {width: 1315px;height: 500px;padding: 20px;margin-bottom: 10px;float: left;text-align: center;border: 1px solid #bcbcbc;background-color: lightgray;}
+#subContent {width: 1315px;height: 700px;padding: 20px;margin-bottom: 10px;float: left;text-align: center;border: 1px solid #bcbcbc;background-color: lightgray;}
 
    /*common area*/
 #subContent h1{font-size: 25px;text-align: center;margin:10px 550px;padding: 10px;color: #FFF;background-color: #007AAE;border-radius: 30px;}
