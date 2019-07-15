@@ -31,8 +31,8 @@
        <ul>
            <li><a class="active">관리자 페이지</a></li>
            <li><a href="#">메인</a></li>
-           <li><a href="#">강좌개설</a></li>
-           <li><a href="#">반배정</a></li>
+           <li><a href="<%=root%>/admin/subA_list.lms">강좌개설</a></li>
+           <li><a href="<%=root%>/admin/cls/list.lms">반배정</a></li>
            <!--  <li><a href="#">출결관리</a></li>-->
        </ul>   
        <%}else{%>
