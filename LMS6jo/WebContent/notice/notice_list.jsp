@@ -57,7 +57,7 @@ function add(){
 					
 	</table>
 	<br>
-	
+
 	<div style="margin-left: 1400px;">
 	<input type="submit" value="글쓰기" style="border: 1px solid #3498DB; background-color: #3498DB;color: white;border-radius: 5px; width: 80px; height: 30px; font-weight: bold;" onclick="add()">
 	</div>

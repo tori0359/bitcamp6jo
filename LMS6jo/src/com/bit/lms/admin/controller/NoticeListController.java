@@ -20,6 +20,7 @@ public class NoticeListController extends HttpServlet{
 		req.setCharacterEncoding("UTF-8");
 		//doPost(req,resp);
 		String keyword=req.getParameter("keyword");
+		
 		NoticeDao dao=new NoticeDao();
 		req.setAttribute("salesList", dao.list(keyword)); 
 		

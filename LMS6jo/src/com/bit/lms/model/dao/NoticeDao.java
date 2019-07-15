@@ -75,6 +75,7 @@ public class NoticeDao {
 				dto.setSubject(rs.getString("nsub"));
 				dto.setContent(rs.getString("ncontent"));
 				dto.setRegdate(rs.getDate("regdate"));
+				dto.setTopstate(rs.getInt("topstate"));
 				
 			}
 		} catch (SQLException e) {
