@@ -29,8 +29,7 @@ public class LearningMaterialsDao {
 	public ArrayList<LearningMaterialsDto> list(){
 		ArrayList<LearningMaterialsDto> list=new ArrayList<LearningMaterialsDto>();
 		String sql = "select a.lmno as lmno, a.lmnm as lmnm, b.name as name, a.regdate as regdate, a.filenm as filenm, a.filepath as filepath "
-				+ "from learningmaterials a, admins b where a.adno=b.adno and b.deptno=1";
-		System.out.println(sql);
+				+ "from learningmaterials a, admins b where a.adno=b.adno and b.deptno=1 order by lmno desc";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
@@ -60,9 +59,57 @@ public class LearningMaterialsDao {
 		return list;
 	}
 	
-	//추가 (nextval로 num, sysdate로 regdate) 
-	public void addList(String name, String fileName, String filePath){
+	//세션의 관리자아이디를 통해서 관리자번호를 가지고 온다.
+	public int getAdno(String aId){
+		String sql = "select adno from admins where id=?";
+		int adno = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, aId);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				adno = rs.getInt("adno");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null){rs.close();}
+				if(pstmt!=null){pstmt.close();}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}		
 		
+		return adno;
+	}
+	
+	//추가 (nextval로 num, sysdate로 regdate) 
+	public int addList(String lmnm, String fileName, String filePath, int adno){
+		int result = 0;
+		String sql = "insert into LearningMaterials(lmno, lmnm, regdate, filenm, filepath, adno) "
+				+ "values(LearningMaterials_seq.nextval, ?,sysdate,?,?,?)";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, lmnm);
+			pstmt.setString(2, fileName);
+			pstmt.setString(3, filePath);
+			pstmt.setInt(4, adno);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {				
+				if(pstmt!=null){pstmt.close();}
+				if(conn!=null){conn.close();}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}		
+		
+		return result;
 	}
 	
 	//수정
