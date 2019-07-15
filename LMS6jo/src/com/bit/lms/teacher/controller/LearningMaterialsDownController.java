@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
@@ -31,8 +32,16 @@ public class LearningMaterialsDownController extends HttpServlet{
 		
 		String aId = (String)session.getAttribute("adminid");
 		
+		ServletContext context = getServletContext();
+		//실제 파일이 저장되는 폴더
+		String realFolder = context.getRealPath("/upload/teacher/"+aId+"/lm");
+		System.out.println(realFolder);
+		
+		//파일경로/파일명
+		String filePath = realFolder + "/" + fileName;
+		
 		//경로 설정
-		String filePath = "C:\\java\\git\\repository\\bitcamp6jo\\LMS6jo\\WebContent\\upload\\teacher\\"+aId+"\\lm\\"+fileName;	
+		//String filePath = "C:\\java\\git\\repository\\bitcamp6jo\\LMS6jo\\WebContent\\upload\\teacher\\"+aId+"\\lm\\"+fileName;	
 
         File file = new File(filePath); // 받은 파일명과 경로로 해당 파일 선언
         resp.setContentType("application/octet-stream"); // 파일 형태 지정
