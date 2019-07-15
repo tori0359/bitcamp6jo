@@ -18,6 +18,7 @@
 		<div class="list_div">
 		<div id="lectureDetail">
 			<table class="detail_type">
+				<form action="<%=root %>/admin/subA_Detail.lms" method="post">
 			<%
 			String param=request.getParameter("idx");
 			int num=Integer.parseInt(param);
@@ -25,6 +26,7 @@
 			SubjectDto bean=dao.subjectDetail(num);
 			%>
 				<tr>
+					<input type="hidden" name="idx" value="<%=bean.getNum() %>"/>
 					<th>강좌번호</th>
 					<td><%=bean.getNum() %></td>
 					<th>강좌명</th>
@@ -43,8 +45,9 @@
 		</table>
 			<div class="">
 				<button class="list_btn">수정</button>
-				<button class="list_btn">삭제</button>
+				<input class="list_btn" type="submit" value="삭 제"/>
 				
+				</form>
 			</div>
 			</div>
 			</div>

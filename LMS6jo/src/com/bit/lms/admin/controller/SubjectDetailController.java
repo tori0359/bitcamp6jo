@@ -29,11 +29,9 @@ public class SubjectDetailController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
-		
-		
 		String num=req.getParameter("idx");
 		int subno=Integer.parseInt(num);
-		
+
 		SubjectDao dao=new SubjectDao();
 		dao.subjectDelete(subno);
 		resp.sendRedirect("/LMS6jo/admin/subA_list.lms");
