@@ -3,17 +3,7 @@
     <link rel= "stylesheet" type="text/css" href="css/attend.css">
 <%@include file="./common/header.jspf" %>
 	
-	<div id="leftMenu">
-        <ul>
-            <li><a class="active">마이페이지</a></li>
-            <li><a href="##">출결확인</a></li>
-            <li><a href="##">과제제출</a></li>
-            <li><a href="##">학습자료다운</a></li>
-            <li><a href="##">성적확인</a></li>
-            <li><a href="##">QnA</a></li>
-            <li><a href="##">회원탈퇴</a></li>
-        </ul>
-    </div>
+	<%@include file="./common/submenu.jspf" %>
 	<div id="content">
     	<h2>출결확인</h2>
     	<div id="attend_content">
