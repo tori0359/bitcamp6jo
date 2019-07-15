@@ -40,7 +40,6 @@ public class LearningMaterialsAddController extends HttpServlet{
 		ServletContext context = getServletContext();
 		
 		//실제 파일이 저장되는 폴더
-		//String path = context.getRealPath("/upload/teacher/"+aId+"/lm");
 		String path = "C:\\java\\git\\repository\\bitcamp6jo\\LMS6jo\\WebContent\\upload\\teacher\\"+aId+"\\lm";
 		
 		File folder = new File(path);
@@ -60,6 +59,7 @@ public class LearningMaterialsAddController extends HttpServlet{
 		String lmnm		= mr.getParameter("lmnm");				//학습자료제목
 		String rename 	= mr.getFilesystemName("fileName");		//중복이 되면서 바뀐 이름
 		
+		req.setCharacterEncoding("utf-8");
 		req.setAttribute("fname", rename);
 		
 		//관리자번호(강사번호)를 가지고온다.
