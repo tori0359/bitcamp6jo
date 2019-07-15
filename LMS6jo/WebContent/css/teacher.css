@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 	/*subContent area */
-#subContent {width: 1315px;height: 400px;padding: 20px;margin-bottom: 10px;float: left;text-align: center;border: 1px solid #bcbcbc;background-color: lightgray;}
+#subContent {width: 1315px;height: 500px;padding: 20px;margin-bottom: 10px;float: left;text-align: center;border: 1px solid #bcbcbc;background-color: lightgray;}
 
 	/*common area*/
 #subContent h1{font-size: 25px;text-align: center;margin:10px 550px;padding: 10px;color: #FFF;background-color: #007AAE;border-radius: 30px;}
@@ -137,10 +137,10 @@ table{border-collapse: collapse;}
 
 
 #subContent table.detail_type th{width: 10%;}
-.classA_div{border:1px solid black;}
+.classA_div{}
 
-#beforeClass{display:block;border:1px solid black; float:left;width:350px;heigh:400px;}
+#beforeClass{display:block; float:left;width:350px;heigh:400px;}
 #beforeClass>table{width:350px;}
-#middle_div{border:1px solid black; float:left;width:100px;}
-#afterClass{border:1px solid black; float:left;width:350px;}
+#middle_div{float:left;width:100px;}
+#afterClass{float:left;width:350px;}
 #afterClass>table{width:350px;}

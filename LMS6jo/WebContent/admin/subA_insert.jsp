@@ -10,21 +10,16 @@
 </head>
 <body>
 	<%
+	/* controller로 옮겨서 이제 지워도 되는 파일입니다. */
 		request.setCharacterEncoding("UTF-8");
-		String subnm=request.getParameter("subnm");
-		String content=request.getParameter("content");
-		String limitno = request.getParameter("limitno");
-		int limitNum=Integer.parseInt(limitno);
-		String limitEnd = request.getParameter("limit_year")+"-"+request.getParameter("limit_month")+"-"+request.getParameter("limit_day");
-		String eduStart = request.getParameter("start_year")+"-"+request.getParameter("start_month")+"-"+request.getParameter("start_day");
-		String eduEnd = request.getParameter("end_year")+"-"+request.getParameter("end_month")+"-"+request.getParameter("end_day");
 		
 		
+		String num=request.getParameter("idx");
+		int subno=Integer.parseInt(num);
 		
 		SubjectDao dao=new SubjectDao();
-		dao.subjectAdd(subnm, content, limitNum, limitEnd, eduStart, eduEnd); 
-		response.sendRedirect("subA_list.lms");
-		
+		dao.subjectDelete(subno);
+		response.sendRedirect("/LMS6jo/admin/subA_list.lms");
 	%>
 </body>
 </html>

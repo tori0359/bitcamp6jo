@@ -63,7 +63,7 @@ public class SubjectDao {
 	
 	//강좌 추가
 	public void subjectAdd(String name, String content, int limitNum, String limitEnd, String eduStart, String eduEnd){
-		String sql="INSERT INTO SUBJECT VALUES (SUBJECT_SEQ.NEXTVAL,?,?,?,?,?,?, SYSDATE, 0,'aa반',1)";
+		String sql="INSERT INTO SUBJECT VALUES (?,SUBJECT_SEQ.NEXTVAL,?,?,?,?,?, SYSDATE, 1,'aa반',1)";
 		Connection conn=null;
 		PreparedStatement pstmt=null;
 		
@@ -76,7 +76,7 @@ public class SubjectDao {
 			pstmt.setString(4, limitEnd);
 			pstmt.setString(5, eduStart);
 			pstmt.setString(6, eduEnd);
-			int result=pstmt.executeUpdate();
+			pstmt.executeUpdate();
 			
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -96,7 +96,26 @@ public class SubjectDao {
 	}
 	//강좌 삭제
 	public void subjectDelete(int num) {
+		String sql="delete from subject where subno=?";
+		Connection conn=null;
+		PreparedStatement pstmt=null;
 		
+		try {
+			conn=LmsOracle.getConnection();			
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		} finally {
+			try {
+				if(pstmt!=null)pstmt.close();
+				if(conn!=null)conn.close();
+			}catch(SQLException e){
+				e.printStackTrace();
+			}
+		}
 	}
 	//강좌 상세
 	public SubjectDto subjectDetail(int num){

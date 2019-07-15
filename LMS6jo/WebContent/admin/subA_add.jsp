@@ -15,7 +15,7 @@
 		<div class="list_div">
 		<div id="lectureDetail">
 			<h2>입력페이지</h2>
-			<form action="subA_insert.jsp" method="post">
+			<form action="<%=root %>/admin/subA_add.lms" method="post">
 			<table class="detail_type">
 			<%
 			

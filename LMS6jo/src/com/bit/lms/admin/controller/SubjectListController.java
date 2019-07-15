@@ -22,4 +22,11 @@ public class SubjectListController extends HttpServlet{
 		RequestDispatcher rd = req.getRequestDispatcher("/admin/subA_list.jsp");
 		rd.forward(req, resp);
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setCharacterEncoding("UTF-8");
+		SubjectDao dao = new SubjectDao();
+		
+	}
 }
