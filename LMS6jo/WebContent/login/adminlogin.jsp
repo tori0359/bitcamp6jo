@@ -61,7 +61,6 @@
 <%@ include file="./../common/footer.jspf" %>
 <%
 	String param=request.getParameter("param");
-	System.out.println(param);
 	if(param!=null){
 		if("fail".equals(param)){	
 	

@@ -19,8 +19,9 @@ public class NoticeListController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		//doPost(req,resp);
+		String keyword=req.getParameter("keyword");
 		NoticeDao dao=new NoticeDao();
-		req.setAttribute("salesList", dao.list()); 
+		req.setAttribute("salesList", dao.list(keyword)); 
 		
 		RequestDispatcher rd = req.getRequestDispatcher("/notice/notice_list.jsp");
 		rd.forward(req, resp);

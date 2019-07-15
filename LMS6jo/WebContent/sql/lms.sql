@@ -203,9 +203,9 @@ CONSTRAINT  R_9 FOREIGN KEY (userno) REFERENCES users(userno)
 
 CREATE TABLE notice
 (
-	nsub                  VARCHAR2(20)  NULL ,
+	nsub                  VARCHAR2(100)  NULL ,
 	nno                   NUMBER  NOT NULL ,
-	ncontent              VARCHAR2(20)  NULL ,
+	ncontent              VARCHAR2(2048)  NULL ,
 	regdate               DATE  NULL ,
 	topstate              NUMBER  NOT NULL ,
 	adno                  NUMBER  NOT NULL ,
@@ -258,10 +258,11 @@ insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.
 insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항10','공지사항내용10',sysdate,0,3);
 insert into notice (nno,nsub,ncontent,regdate,topstate,adno) values (notice_seq.nextval,'공지사항11','공지사항내용11',sysdate,0,3);
 
-select * from(select rownum as rn,nno,nsub,ncontent,regdate,topstate,adno from(select * from (select * from notice order by topstate desc)order by nno desc)) ORDER BY topstate desc, nno desc;
 select * from(select rownum as rn,nno,nsub,ncontent,regdate,topstate,adno from(select * from notice order by topstate desc, nno desc));
 
 delete from notice where nno>=25;
+
+select * from(select rownum as rn,nno,nsub,ncontent,regdate,topstate,adno from(select * from notice where nsub like '%%'  order by topstate desc, nno desc));
 
 insert into SUBJECT (subno,subnm,subcontent,limitno,limitend,edustart,eduend,regdate,classno,classnm,adno) values 
 (subject_seq.nextval,'java과정','java과정입니다',20,'2019-08-07','2019-08-12','2019-10-10',sysdate,1,'java반',1);
