@@ -24,7 +24,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<button class="mainT_btn2"><a href="<%=root%>/teacher/scoreT_list.jsp">성적목록</a></button>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<button class="mainT_btn2"><a href="<%=root%>/teacher/qnaQT_list.jsp">Q&A목록</a></button>
+				<button class="mainT_btn2"><a href="<%=root%>/teacher/qnaQT_list.lms">Q&A목록</a></button>
 				<br/><br/>
 				
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

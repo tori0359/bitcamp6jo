@@ -168,6 +168,33 @@ public class UserDao {
 			try {
 				if(rs!=null)rs.close();
 				if(pstmt!=null)pstmt.close();
+				//if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
+	public int loginno(String id){
+		String sql="select userno from users where id=?";
+		int result=0;
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				result=rs.getInt("userno");
+			}else{
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(rs!=null)rs.close();
+				if(pstmt!=null)pstmt.close();
 				if(conn!=null)conn.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -177,7 +204,6 @@ public class UserDao {
 		
 		return result;
 	}
-	
 	
 	//관리자 로그인(로그아웃 session처리)
 	public int adminlogin(String id, String pw){
@@ -238,6 +264,34 @@ public class UserDao {
 			
 			return result;
 		}
+		//adno 받아옴
+		public int loginAdmino(String adno){
+			String sql="select adno from admins where id=?";
+			int result=0;
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, adno);
+				rs=pstmt.executeQuery();
+				if(rs.next()){
+					result=rs.getInt("adno");
+				}else{
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally{
+				try {
+					if(rs!=null)rs.close();
+					if(pstmt!=null)pstmt.close();
+					if(conn!=null)conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			return result;
+		}
+		
+		
 		//deptno 받아옴
 				public int deptNo(String id){
 					String sql="select deptno from admins where id=?";

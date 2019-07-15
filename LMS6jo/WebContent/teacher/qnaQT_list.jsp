@@ -18,13 +18,14 @@
 					</tr>
 				</thead>
 				<tbody>
-				<%ArrayList<QnaDto> list=(ArrayList<QnaDto>)request.getAttribute("qnalist");
+				<%
+					ArrayList<QnaDto> list=(ArrayList<QnaDto>)request.getAttribute("qnalist");
 					for(QnaDto qto : list){
 				%>
 					<tr>
 						<td><%=qto.getNum() %></td>
 						<td><%=qto.getName2() %></td>
-						<td><a href="qnaQT_detail.jsp?idx=<%=qto.getNum()%>"><%=qto.getqSub() %></a></td>
+						<td><a href="qnaQT_detail.lms?idx=<%=qto.getNum()%>"><%=qto.getqSub() %></a></td>
 						<td><%=qto.getName1() %></td>
 						<td><%=qto.getRegDate() %></td>
 						<td><%if(qto.getaSub()!=null){%><%=qto.getUpdateDate() %><%}else{} %></td>
@@ -33,6 +34,10 @@
 					<%} %>
 				</tbody>
 			</table>
+			<%
+			if(session.getAttribute("userno") != null){%>
+			<a href="qnaQT_add.lms">입력</a>
+			<%}else{} %>
 		</div>
 		</div>
     </div>

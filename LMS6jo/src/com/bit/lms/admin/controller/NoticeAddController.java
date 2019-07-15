@@ -11,12 +11,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.bit.lms.model.dao.NoticeDao;
 
 @WebServlet("/notice/add.lms")
+
 public class NoticeAddController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		doPost(req, resp);
+
 	}
 	
 	@Override
