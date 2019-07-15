@@ -13,6 +13,7 @@
 			});
 		</script>
 		<div id="subContent">
+		<div class="list_div">
 		<%
 			QnaDto qto=(QnaDto)request.getAttribute("qnaDetail");
 		%>
@@ -36,7 +37,7 @@
 					<td style="text-align: left"><%=qto.getqContent() %></td>
 				</tr>
 			</table>
-			<center>
+			
 				<%if(String.valueOf(session.getAttribute("deptno")).equals("1")){%>
 				
 				<button type="submit" class="list_btn">답변</button>
@@ -46,7 +47,7 @@
 				<%} else{%>
 				<button id="nobtn" class="list_btn">삭제</button>
 				<%}} %>
-			</center>
+			
 			</form>
 			<%if(qto.getaSub()!=null){%>
 			<table class="type11">
@@ -64,6 +65,7 @@
 				</tr>
 			</table>
 			<%}else{} %>
+		</div>
 		</div>
     </div>
 <%@include file="./../common/footer.jspf" %>

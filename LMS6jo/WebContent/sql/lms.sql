@@ -93,7 +93,7 @@ CREATE TABLE admins
 	email                 VARCHAR2(30)  NULL ,
 	sex                   NUMBER  NOT NULL ,
 	confirmno             VARCHAR2(20)  NULL ,
-	pwa                   VARCHAR2(20)  NULL ,
+	pwa                   VARCHAR2(200)  NULL ,
 	name                  VARCHAR2(10)  NULL ,
 	pwfno                 NUMBER  NOT NULL ,
 	deptno                NUMBER  NOT NULL ,
@@ -106,16 +106,16 @@ CONSTRAINT  R_8 FOREIGN KEY (deptno) REFERENCES Dept(deptno)
 
 CREATE TABLE subject
 (
-	subnm                 VARCHAR2(20)  NOT NULL ,
+	subnm                 VARCHAR2(200)  NOT NULL ,
 	subno                 NUMBER  NOT NULL ,
-	subcontent            VARCHAR2(20)  NOT NULL ,
+	subcontent            VARCHAR2(2000)  NOT NULL ,
 	limitno               NUMBER  NOT NULL ,
 	limitend              VARCHAR2(20)  NOT NULL ,
 	edustart              VARCHAR2(20)  NOT NULL ,
 	eduend                VARCHAR2(20)  NOT NULL ,
 	regdate               DATE  NULL ,
 	classno				  NUMBER NULL ,
-	classnm               VARCHAR2(20)  NULL ,
+	classnm               VARCHAR2(200)  NULL ,
 	adno                  NUMBER  NOT NULL ,
 CONSTRAINT  XPKsubject PRIMARY KEY (subno),
 CONSTRAINT  R_1 FOREIGN KEY (adno) REFERENCES admins(adno)
@@ -134,7 +134,7 @@ CREATE TABLE users
 	email                 VARCHAR2(20)  NOT NULL ,
 	sex                   NUMBER  NULL ,
 	regdate               DATE  NULL ,
-	pwa                   VARCHAR2(20)  NOT NULL ,
+	pwa                   VARCHAR2(200)  NOT NULL ,
 	jpath                 NUMBER  NOT NULL ,
 	pwfno                 NUMBER  NOT NULL ,
 	subno                 NUMBER NOT NULL,
@@ -165,11 +165,11 @@ CONSTRAINT  R_10 FOREIGN KEY (userno) REFERENCES users(userno)
 CREATE TABLE assign
 (
 	assno                 NUMBER  NOT NULL ,
-	assnm                 VARCHAR2(20)  NULL ,
-	asscontent            VARCHAR2(20)  NULL ,
+	assnm                 VARCHAR2(200)  NULL ,
+	asscontent            VARCHAR2(200)  NULL ,
 	regdate               DATE  NULL ,
-	filenm                VARCHAR2(20)  NULL ,
-	filepath              VARCHAR2(20)  NULL ,
+	filenm                VARCHAR2(200)  NULL ,
+	filepath              VARCHAR2(200)  NULL ,
 	userno                NUMBER  NOT NULL ,
 CONSTRAINT  XPKassign PRIMARY KEY (assno),
 CONSTRAINT  R_11 FOREIGN KEY (userno) REFERENCES users(userno)
@@ -203,9 +203,9 @@ CONSTRAINT  R_9 FOREIGN KEY (userno) REFERENCES users(userno)
 
 CREATE TABLE notice
 (
-	nsub                  VARCHAR2(20)  NULL ,
+	nsub                  VARCHAR2(200)  NULL ,
 	nno                   NUMBER  NOT NULL ,
-	ncontent              VARCHAR2(20)  NULL ,
+	ncontent              VARCHAR2(2000)  NULL ,
 	regdate               DATE  NULL ,
 	topstate              NUMBER  NOT NULL ,
 	adno                  NUMBER  NOT NULL ,
@@ -220,8 +220,8 @@ CREATE TABLE LearningMaterials
 	lmnm                  VARCHAR2(20)  NULL ,
 	lmno                  NUMBER  NOT NULL ,
 	regdate               DATE  NULL ,
-	filenm                VARCHAR2(20)  NULL ,
-	filepath              VARCHAR2(20)  NULL ,
+	filenm                VARCHAR2(200)  NULL ,
+	filepath              VARCHAR2(200)  NULL ,
 	adno                  NUMBER  NOT NULL ,
 CONSTRAINT  XPKLearningMaterials PRIMARY KEY (lmno),
 CONSTRAINT  R_13 FOREIGN KEY (adno) REFERENCES admins(adno)

@@ -36,7 +36,7 @@
 			</table>
 			<%
 			if(session.getAttribute("userno") != null){%>
-			<a href="qnaQT_add.lms">입력</a>
+			<a class="list_btn" href="qnaQT_add.lms">입 력</a>
 			<%}else{} %>
 		</div>
 		</div>

@@ -1,14 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.text.SimpleDateFormat,java.util.Date"%>
 <%@include file="./../common/header.jspf" %>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		$('#qna_reset').click(function(){
+    			window.history.back();
+    		});
+    	});
+    </script>
 	<div id="content">
 		<%@include file="./../common/submenu.jspf" %>
 		<div id="subContent">
-			<h1>답변등록</h1>
+		<div class="attend_div">
+			<h2>답변등록</h2>
 			<form action="qnaQT_add.lms" method="POST">
-			<table class="type12">
+			<table class="type14">
 				<tr>
-					<th class="th1">작성자</th>
+					<th>작성자</th>
 					<td style="text-align: left"><input type="hidden" name="userno" value="<%=session.getAttribute("userno")%>"/><%=session.getAttribute("name") %></td>
 				</tr>
 				<tr>
@@ -19,7 +27,7 @@
 				
 				String currentTime=format1.format(time);
 				%>
-					<th class="th1">작성일자</th>
+					<th>작성일자</th>
 					<td style="text-align: left"><input type="hidden" name="regdate" value="<%=currentTime %>"/><%=currentTime %></td>
 				</tr>
 				<tr>
@@ -28,14 +36,15 @@
 				</tr>
 				<tr>
 					<th class="th1">내용</th>
-					<td class="updTd" style="text-align: left"><textarea cols="130" rows="10" name="qcontent"></textarea></td>
+					<td class="updTd" style="text-align: left"><textarea cols="120" rows="10" name="qcontent"></textarea></td>
 				</tr>
 			</table>
-			<center>
-				<button type="submit" class="list_btn"/>답변등록</button>
-				<button type="reset" class="list_btn">답변취소</button>
-			</center>		
+			
+				<button type="submit" class="list_btn">답변등록</button>
+				<button type="reset" class="list_btn" id="qna_reset">답변취소</button>
+				
 			</form>
+		</div>
 		</div>
     </div>
 <%@include file="./../common/footer.jspf" %>
