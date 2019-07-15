@@ -34,7 +34,10 @@
 					<%} %>
 				</tbody>
 			</table>
+			<%
+			if(session.getAttribute("userno") != null){%>
 			<a href="qnaQT_add.lms">입력</a>
+			<%}else{} %>
 		</div>
 		</div>
     </div>

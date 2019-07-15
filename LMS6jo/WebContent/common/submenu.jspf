@@ -18,7 +18,7 @@
            <li><a href="<%=root%>/teacher/subject/list.lms">과제관리</a></li>
            <li><a href="<%=root%>/teacher/lm/list.lms">학습자료관리</a></li>
            <li><a href="<%=root%>/teacher/scoreT_list.jsp">성적관리</a></li>
-           <li><a href="<%=root%>/teacher/qnaQT_list.jsp">Q&A</a></li>
+           <li><a href="<%=root%>/teacher/qnaQT_list.lms">Q&A</a></li>
        </ul>
        <%}else if(deptno.equals("2")){//영업부 메인페이지와 연결 %>
        <ul>
