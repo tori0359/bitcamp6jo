@@ -23,9 +23,12 @@ public class NoticeUpdController extends HttpServlet{
 		int num=Integer.parseInt(param);
 		String sub =req.getParameter("sub");
 		String content =req.getParameter("content");
+		String top=req.getParameter("topstate");
+		if(top==null)top="0";
+		int topstate=Integer.parseInt(top);
 		
 		NoticeDao dao=new NoticeDao();
-		dao.editOne(num, sub, content);
+		dao.editOne(num, sub, content, topstate);
 		
 		resp.sendRedirect("/LMS6jo/notice/notice_detail.jsp?nno="+num);
 		

@@ -118,14 +118,15 @@ public class NoticeDao {
 	}
 	
 	//수정
-	public void editOne(int num, String sub, String content){
-		String sql ="update notice set nsub=?,ncontent=? where nno=?";
+	public void editOne(int num, String sub, String content, int topstate){
+		String sql ="update notice set nsub=?,ncontent=?,topstate=? where nno=?";
 	
 			try {
 				pstmt=conn.prepareStatement(sql);
 				pstmt.setString(1, sub);
 				pstmt.setString(2, content);
-				pstmt.setInt(3, num);
+				pstmt.setInt(3, topstate);
+				pstmt.setInt(4, num);
 				pstmt.executeUpdate();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
