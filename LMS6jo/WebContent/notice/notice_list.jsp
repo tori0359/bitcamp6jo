@@ -38,7 +38,7 @@ function add(){
 					%>
 					<tr  style="border-bottom : 1px solid darkgray; text-align: center; height: 30px; background-color: #F2C4C4">
 						<td><%=dto.getNum() %></td>
-						<td><a style="color: black" href="notice_detail.jsp?nno="<%=dto.getNum() %>><%=dto.getSubject() %></a></td>
+						<td><a style="color: black" href="notice_detail.jsp?nno=<%=dto.getNum() %>"><%=dto.getSubject() %></a></td>
 						<td><%=session.getAttribute("name") %></td>
 						<td><%=dto.getRegdate() %></td>
 					</tr>
@@ -59,9 +59,7 @@ function add(){
 	<div style="margin-left: 1400px;">
 	<input type="submit" value="글쓰기" style="border: 1px solid #3498DB; background-color: #3498DB;color: white;border-radius: 5px; width: 80px; height: 30px; font-weight: bold;" onclick="add()">
 	</div>
-	
-	<div style="text-align: center">＜ 1 2 3 ＞</div>
-	</div>
+
 <%@include file="./../../common/footer.jspf" %>
 </body>
 </html>

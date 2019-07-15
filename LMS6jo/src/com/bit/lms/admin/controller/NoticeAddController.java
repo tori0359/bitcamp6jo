@@ -28,9 +28,10 @@ public class NoticeAddController extends HttpServlet{
 		if(top==null)top="0";
 		int topstate=Integer.parseInt(top);
 		
+		if(sub!=null && content!=null){
 		NoticeDao dao=new NoticeDao();
 		dao.addList(sub, content, topstate);
-		
+		}
 		resp.sendRedirect("/LMS6jo/notice/list.lms");
 		
 	}

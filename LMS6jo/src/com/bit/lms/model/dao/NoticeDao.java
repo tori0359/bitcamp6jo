@@ -70,8 +70,10 @@ public class NoticeDao {
 			pstmt.setInt(1, num);
 			rs=pstmt.executeQuery();
 			if(rs.next()){
-				dto.setNum(rs.getInt("num"));
-				dto.setSubject(rs.getString("subject"));
+				dto.setNum(rs.getInt("nno"));
+				dto.setSubject(rs.getString("nsub"));
+				dto.setContent(rs.getString("ncontent"));
+				dto.setRegdate(rs.getDate("regdate"));
 				
 			}
 		} catch (SQLException e) {
@@ -114,21 +116,50 @@ public class NoticeDao {
 	}
 	
 	//수정
-	public void editOne(int num, String sub, int topstate){
+	public void editOne(int num, String sub, String content){
+		String sql ="update notice set nsub=?,ncontent=? where nno=?";
+	
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, sub);
+				pstmt.setString(2, content);
+				pstmt.setInt(3, num);
+				pstmt.executeUpdate();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally{
+				try {
+					if(pstmt!=null)pstmt.close();
+					if(conn!=null)conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
 		
 	}
 	
 	//삭제
 	public void deleteOne(int num){
-		
+		String sql="delete from notice where nno=?";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+				try {
+					if(pstmt!=null)pstmt.close();
+					if(conn!=null)conn.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
 	}
-	/*
-	 * private int 	num;			//공지사항 번호
-	private String	subject;		//공지사항 제목
-	private String	content;		//공지사항 내용
-	private Date	regdate;		//공지사항 등록일자
-	private int		topstate;		//공지사항 상단노출상태값(0:공지사항x, 1:공지사항o)
-	 */
 	
 	
 	

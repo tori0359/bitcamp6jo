@@ -17,6 +17,5 @@ public class NoticeDetailController extends HttpServlet{
 		req.setCharacterEncoding("UTF-8");
 		
 		String idx=req.getParameter("nno");
-		System.out.println(idx);
 	}
 }
