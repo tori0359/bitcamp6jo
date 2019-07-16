@@ -118,6 +118,42 @@ public class AssignDao {
 		return bean.getFileName();
 	}
 	
+	
+	//과제목록 - 학생
+		public ArrayList<AssignDto> userAssignList(int num){
+			ArrayList<AssignDto> list = new ArrayList<AssignDto>();
+			//학생은 반번호가 있고 강사는 강좌번호와 자신의 반번호와 자신의 강좌번호를 갖는다. (현재는 임시 테스트용 쿼리) 
+			String sql = "select A.assno as assno, A.assnm as assnm, A.asscontent as asscontent, "
+					+ "A.regdate as regdate, A.filenm as filenm, A.filepath as filepath, B.name as uname from assign A, users B where A.userno=B.userno and b.userno=?";
+			AssignDto bean = new AssignDto();
+			try {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, num);
+				rs = pstmt.executeQuery();
+				while(rs.next()){
+					bean.setNum(rs.getInt("assno"));				//과제번호
+					bean.setName(rs.getString("assnm"));			//과제명
+					bean.setContent(rs.getString("asscontent"));	//과제내용
+					bean.setRegdate(rs.getDate("regdate"));			//과제등록일자
+					bean.setFileName(rs.getString("fileNm"));		//파일명
+					bean.setFilePath(rs.getString("filePath"));		//파일경로
+					bean.setUname(rs.getString("uname"));			//수강생이름
+					list.add(bean);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} finally{
+				try {
+					if(rs!=null){rs.close();}
+					if(pstmt!=null){pstmt.close();}
+					if(conn!=null){conn.close();}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}			
+			}
+			return list;
+		}
+	
 	//과제등록 - 수강생
 	public int assignInsert(){
 		

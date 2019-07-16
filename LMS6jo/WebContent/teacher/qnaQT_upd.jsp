@@ -4,7 +4,8 @@
 	<div id="content">
 		<%@include file="./../common/submenu.jspf" %>
 		<div id="subContent">
-			<h1>답변</h1>
+		<div class="attend_div">
+			<h2>답변</h2>
 			<form action="qnaQT_upd.lms" method="POST">
 			<table class="type11">
 			<%QnaDto qto=(QnaDto)request.getAttribute("qnaUpd"); %>
@@ -32,11 +33,12 @@
 					<td style="text-align: left"><input type="text" name="acontent"/></td>
 				</tr>
 			</table>
-			<center>
-				<button type="submit" class="upd_btn">수정</button>
-				<button class="upd_btn">리스트</button>
-			</center>
+			
+				<button type="submit" class="list_btn">수 정</button>
+				<button class="list_btn">목 록</button>
+			
 			</form>		
+		</div>
 		</div>
     </div>
 <%@include file="./../common/footer.jspf" %>

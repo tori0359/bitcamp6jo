@@ -4,7 +4,6 @@
 <!-- 강사용 -->
 <%
    String deptno=null;   
-
    if(session.getAttribute("deptno")==null){
       deptno = "0";
    } else{
@@ -35,6 +34,7 @@
        <ul>
            <li><a class="active">마이 페이지</a></li>
            <li><a href="<%=root%>/teacher/lm/list.lms">학습자료</a></li>
+           <li><a href="<%=root%>/teacher/subject/list.lms">과제제출</a>
            <li><a href="<%=root%>/teacher/qnaQT_list.lms">QnA</a></li>
        </ul>   
        <%} %>

@@ -114,10 +114,10 @@
 			
 			%>
 			</table>
-			<center>
-				<button class="upd_btn">수정</button>
-				<button class="del_btn">삭제</button>
-			</center>		
+			<!-- 
+				<button class="list_btn">수정</button>
+				<button class="list_btn">삭제</button>
+			-->
 		</div>
     </div>
 <%@include file="./../../common/footer.jspf" %>

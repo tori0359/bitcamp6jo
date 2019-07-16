@@ -5,7 +5,7 @@
 
    /*common area*/
 #subContent h1{font-size: 25px;text-align: center;margin:10px 550px;padding: 10px;color: #FFF;background-color: #007AAE;border-radius: 30px;}
-#subContent .th1{width: 10%;}
+
 
 /*btn area*/
 .mainT_btn{display: inline-block;padding: 2em 3em;border-radius: 0.35m;letter-spacing: 0.20em;text-decoration: none;font-weight: 400;font-size: 0.90em;
@@ -86,6 +86,8 @@ input.regist{
 
 /*subject board area*/
 .list_div{display:inline-block;width:900px;}
+.attend_div{display:inline-block;width:900px;}
+
 
 #subContent table{width:100%;margin: 0px auto;}
 #subContent table.type11 th:nth-child(1){width: 10%;}
@@ -94,12 +96,16 @@ input.regist{
 #subContent table.type11 th:nth-child(4){width: 10%;}
 #subContent table.type11 th:nth-child(5){width: 10%;}
 
+#subContent table.type14 th{width: 100px;}
+
+.attend_div h2{font-size: 20px;padding: 5px;color: #FFF;background-color: #007AAE;border-radius: 30px;}
+
 .list_div table {border-collapse: separate;border-spacing: 1px;text-align: center;line-height: 1.5;margin: 20px 10px;}
 .list_div table th{padding: 8px;font-weight: bold;vertical-align: top;color: #fff;background: lightblue ;}
 .list_div table td{padding: 8px;vertical-align: top;border-bottom: 1px solid #ccc;background: #eee;}
 
 .attend_div table{border-collapse: separate;border-spacing: 1px;text-align: center;line-height: 1;margin: 10px 5px;}
-.attend_div table th{padding: 5px;font-weight: bold;vertical-align: top;color: #fff;background: lightblue ;}
+.attend_div table th{padding: 5px;font-weight: bold;vertical-align: top;color: #fff;background: lightblue;}
 .attend_div table td{padding: 5px;vertical-align: top;border-bottom: 1px solid #ccc;background: #eee;}
 
 

@@ -24,7 +24,7 @@ function check() {
 		<%@include file="./../../common/submenu.jspf" %>
 <div id="notice-main">
 <h2 style="margin-left: 800px;">공지사항</h2>
-<form method="get" action="<%=root %>/notice/add.lms" name="form">
+<form method="post" action="<%=root %>/notice/add.lms" name="form">
 	<table id="salesList" style="width: 1200px; margin-left: 285px;">
 					<tr  style="text-align: center; background-color: #eeeeee; height: 34px;">
 						<th style="width: 110px;">제목</th>
