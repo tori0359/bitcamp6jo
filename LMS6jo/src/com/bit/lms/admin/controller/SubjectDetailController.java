@@ -31,7 +31,7 @@ public class SubjectDetailController extends HttpServlet{
       req.setCharacterEncoding("UTF-8");
       String num=req.getParameter("idx");
       int subno=Integer.parseInt(num);
-      System.out.println(subno);
+ 
       SubjectDao dao=new SubjectDao();
       dao.subjectDelete(subno);
       resp.sendRedirect("/LMS6jo/admin/subA_list.lms");
