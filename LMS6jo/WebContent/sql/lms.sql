@@ -77,7 +77,7 @@ CONSTRAINT  XPKpwfind PRIMARY KEY (pwfno)
 CREATE TABLE Dept
 (
 	deptno                NUMBER  NOT NULL ,
-	doptnm                VARCHAR2(20)  NULL ,
+	deptnm                VARCHAR2(20)  NULL ,
 CONSTRAINT  XPKDept PRIMARY KEY (deptno)
 );
 
@@ -87,8 +87,8 @@ CREATE TABLE admins
 (
 	id                    VARCHAR2(20)  NOT NULL ,
 	adno                  NUMBER  NOT NULL ,
-	pw1                   VARCHAR2(20)  NOT NULL ,
-	pw2                   VARCHAR2(20)  NOT NULL ,
+	pw1                   VARCHAR2(50)  NOT NULL ,
+	pw2                   VARCHAR2(50)  NOT NULL ,
 	cp                    VARCHAR2(20)  NOT NULL ,
 	email                 VARCHAR2(30)  NULL ,
 	sex                   NUMBER  NOT NULL ,
@@ -128,8 +128,8 @@ CREATE TABLE users
 	userno                NUMBER  NOT NULL ,
 	id                    VARCHAR2(20)  NOT NULL ,
 	name                  VARCHAR2(20)  NOT NULL ,
-	pw1                   VARCHAR2(20)  NOT NULL ,
-	pw2                   VARCHAR2(20)  NOT NULL ,
+	pw1                   VARCHAR2(50)  NOT NULL ,
+	pw2                   VARCHAR2(50)  NOT NULL ,
 	cp                    VARCHAR2(20)  NOT NULL ,
 	email                 VARCHAR2(20)  NOT NULL ,
 	sex                   NUMBER  NULL ,
@@ -150,7 +150,7 @@ CREATE TABLE qna
 (
 	qnano                 NUMBER  NOT NULL ,
 	qsub                  VARCHAR2(50)  NULL ,
-	qcontent              VARCHAR2(1000)  NULL ,
+	qcontent              VARCHAR2(2000)  NULL ,
 	regdate               DATE  NULL ,
 	asub                  VARCHAR2(50)  NULL ,
 	acontent              VARCHAR2(1000)  NULL ,
@@ -165,11 +165,11 @@ CONSTRAINT  R_10 FOREIGN KEY (userno) REFERENCES users(userno)
 CREATE TABLE assign
 (
 	assno                 NUMBER  NOT NULL ,
-	assnm                 VARCHAR2(20)  NULL ,
-	asscontent            VARCHAR2(20)  NULL ,
+	assnm                 VARCHAR2(50)  NULL ,
+	asscontent            VARCHAR2(2000)  NULL ,
 	regdate               DATE  NULL ,
-	filenm                VARCHAR2(20)  NULL ,
-	filepath              VARCHAR2(20)  NULL ,
+	filenm                VARCHAR2(500)  NULL ,
+	filepath              VARCHAR2(500)  NULL ,
 	userno                NUMBER  NOT NULL ,
 CONSTRAINT  XPKassign PRIMARY KEY (assno),
 CONSTRAINT  R_11 FOREIGN KEY (userno) REFERENCES users(userno)
@@ -203,9 +203,9 @@ CONSTRAINT  R_9 FOREIGN KEY (userno) REFERENCES users(userno)
 
 CREATE TABLE notice
 (
-	nsub                  VARCHAR2(20)  NULL ,
+	nsub                  VARCHAR2(500)  NULL ,
 	nno                   NUMBER  NOT NULL ,
-	ncontent              VARCHAR2(20)  NULL ,
+	ncontent              VARCHAR2(2000)  NULL ,
 	regdate               DATE  NULL ,
 	topstate              NUMBER  NOT NULL ,
 	adno                  NUMBER  NOT NULL ,
@@ -217,11 +217,11 @@ CONSTRAINT  R_14 FOREIGN KEY (adno) REFERENCES admins(adno)
 
 CREATE TABLE LearningMaterials
 (
-	lmnm                  VARCHAR2(20)  NULL ,
+	lmnm                  VARCHAR2(200)  NULL ,
 	lmno                  NUMBER  NOT NULL ,
 	regdate               DATE  NULL ,
-	filenm                VARCHAR2(20)  NULL ,
-	filepath              VARCHAR2(20)  NULL ,
+	filenm                VARCHAR2(500)  NULL ,
+	filepath              VARCHAR2(500)  NULL ,
 	adno                  NUMBER  NOT NULL ,
 CONSTRAINT  XPKLearningMaterials PRIMARY KEY (lmno),
 CONSTRAINT  R_13 FOREIGN KEY (adno) REFERENCES admins(adno)
@@ -263,9 +263,5 @@ insert into assign (assno,assnm,asscontent,regdate,userno) values (assign_seq.ne
 
 insert into score (scoreno,testno,testscore,userno) values (score_seq.nextval,1,80,1);
 
-select * from admins;
-select * from users;
-
 insert into admins (adno,id,name,pw1,pw2,cp,email,sex,confirmno,pwa,pwfno,deptno) values (admins_seq.nextval,'admin4','관리자','1234','1234','010-1234-1234','admin1234@naver.com',1,'qwer1234','답변1','1',1);
-rollback
 
